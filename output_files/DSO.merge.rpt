@@ -1,0 +1,650 @@
+Partition Merge report for DSO
+Sun Jan 13 00:42:26 2019
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Partition Merge Summary
+  3. Partition Merge Netlist Types Used
+  4. Connections to In-System Debugging Instance "auto_signaltap_0"
+  5. Partition Merge Partition Statistics
+  6. Partition Merge Partition Pin Processing
+  7. Partition Merge Resource Usage Summary
+  8. Partition Merge RAM Summary
+  9. Partition Merge DSP Block Usage Summary
+ 10. Partition Merge Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Partition Merge Summary                                                       ;
++---------------------------------+---------------------------------------------+
+; Partition Merge Status          ; Successful - Sun Jan 13 00:42:26 2019       ;
+; Quartus II 64-Bit Version       ; 13.1.0 Build 162 10/23/2013 SJ Full Version ;
+; Revision Name                   ; DSO                                         ;
+; Top-level Entity Name           ; DSO                                         ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 2025                                        ;
+; Total pins                      ; 43                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 1,531,904                                   ;
+; Total DSP Blocks                ; 6                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI TX Channels          ; 0                                           ;
+; Total PLLs                      ; 1                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge Netlist Types Used                                                                                            ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+; Partition Name                 ; Partition Type ; Netlist Type Used ; Netlist Type Requested ; Partition Contents             ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+; Top                            ; User-created   ; Source File       ; Post-Fit               ;                                ;
+; sld_hub:auto_hub               ; Auto-generated ; Post-Synthesis    ; Post-Synthesis         ; sld_hub:auto_hub               ;
+; sld_signaltap:auto_signaltap_0 ; Auto-generated ; Post-Synthesis    ; Post-Synthesis         ; sld_signaltap:auto_signaltap_0 ;
+; hard_block:auto_generated_inst ; Auto-generated ; Source File       ; Source File            ; hard_block:auto_generated_inst ;
++--------------------------------+----------------+-------------------+------------------------+--------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Connections to In-System Debugging Instance "auto_signaltap_0"                                                                                                                                                                                                                                              ;
++-------------------------------------+---------------+-----------+----------------+-------------------+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Name                                ; Type          ; Status    ; Partition Name ; Netlist Type Used ; Actual Connection                   ; Details                                                                                                                                                        ;
++-------------------------------------+---------------+-----------+----------------+-------------------+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; 50Mclk                              ; pre-synthesis ; connected ; Top            ; post-synthesis    ; 50Mclk                              ; N/A                                                                                                                                                            ;
+; RAM_out[0]                          ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                 ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; RAM_out[0]                          ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                 ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; RAM_out[1]                          ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                 ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; RAM_out[1]                          ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                 ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; RAM_out[2]                          ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                 ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; RAM_out[2]                          ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                 ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; RAM_out[3]                          ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                 ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; RAM_out[3]                          ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                 ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; RAM_out[4]                          ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                 ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; RAM_out[4]                          ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                 ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; RAM_out[5]                          ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                 ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; RAM_out[5]                          ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                 ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; RAM_out[6]                          ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                 ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; RAM_out[6]                          ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                 ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; RAM_out[7]                          ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                 ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; RAM_out[7]                          ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                 ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; RAM_out[8]                          ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                 ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; RAM_out[8]                          ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                 ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; RAM_out[9]                          ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                 ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; RAM_out[9]                          ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                 ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; measuring:DSO_meas|freqBi[0]        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqBi[0]        ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqBi[0]        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqBi[0]        ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqBi[10]       ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqBi[10]       ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqBi[10]       ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqBi[10]       ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqBi[11]       ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqBi[11]       ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqBi[11]       ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqBi[11]       ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqBi[12]       ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqBi[12]       ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqBi[12]       ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqBi[12]       ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqBi[13]       ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqBi[13]       ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqBi[13]       ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqBi[13]       ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqBi[14]       ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqBi[14]       ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqBi[14]       ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqBi[14]       ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqBi[15]       ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqBi[15]       ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqBi[15]       ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqBi[15]       ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqBi[16]       ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqBi[16]       ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqBi[16]       ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqBi[16]       ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqBi[17]       ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqBi[17]       ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqBi[17]       ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqBi[17]       ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqBi[18]       ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqBi[18]       ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqBi[18]       ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqBi[18]       ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqBi[19]       ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqBi[19]       ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqBi[19]       ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqBi[19]       ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqBi[1]        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqBi[1]        ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqBi[1]        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqBi[1]        ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqBi[2]        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqBi[2]        ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqBi[2]        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqBi[2]        ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqBi[3]        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqBi[3]        ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqBi[3]        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqBi[3]        ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqBi[4]        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqBi[4]        ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqBi[4]        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqBi[4]        ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqBi[5]        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqBi[5]        ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqBi[5]        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqBi[5]        ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqBi[6]        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqBi[6]        ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqBi[6]        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqBi[6]        ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqBi[7]        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqBi[7]        ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqBi[7]        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqBi[7]        ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqBi[8]        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqBi[8]        ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqBi[8]        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqBi[8]        ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqBi[9]        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqBi[9]        ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqBi[9]        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqBi[9]        ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|precheck         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|precheck         ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|precheck         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|precheck         ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|state            ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|state            ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|state            ; pre-synthesis ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|state            ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[0]       ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[0]       ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[0]       ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[0]       ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[10]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[10]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[10]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[10]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[11]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[11]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[11]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[11]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[12]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[12]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[12]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[12]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[13]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[13]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[13]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[13]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[14]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[14]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[14]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[14]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[15]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[15]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[15]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[15]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[16]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[16]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[16]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[16]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[17]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[17]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[17]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[17]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[18]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[18]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[18]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[18]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[19]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[19]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[19]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[19]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[1]       ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[1]       ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[1]       ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[1]       ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[20]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[20]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[20]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[20]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[21]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[21]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[21]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[21]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[22]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[22]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[22]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[22]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[23]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[23]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[23]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[23]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[2]       ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[2]       ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[2]       ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[2]       ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[3]       ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[3]       ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[3]       ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[3]       ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[4]       ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[4]       ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[4]       ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[4]       ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[5]       ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[5]       ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[5]       ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[5]       ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[6]       ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[6]       ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[6]       ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[6]       ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[7]       ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[7]       ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[7]       ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[7]       ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[8]       ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[8]       ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[8]       ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[8]       ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[9]       ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[9]       ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|freqout[9]       ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|freqout[9]       ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[0]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[0]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[0]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[0]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[10]     ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[10]     ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[10]     ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[10]     ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[11]     ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[11]     ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[11]     ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[11]     ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[12]     ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[12]     ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[12]     ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[12]     ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[13]     ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[13]     ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[13]     ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[13]     ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[14]     ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[14]     ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[14]     ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[14]     ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[15]     ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[15]     ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[15]     ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[15]     ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[16]     ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[16]     ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[16]     ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[16]     ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[17]     ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[17]     ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[17]     ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[17]     ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[18]     ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[18]     ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[18]     ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[18]     ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[19]     ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[19]     ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[19]     ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[19]     ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[1]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[1]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[1]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[1]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[20]     ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[20]     ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[20]     ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[20]     ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[21]     ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[21]     ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[21]     ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[21]     ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[22]     ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[22]     ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[22]     ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[22]     ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[23]     ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[23]     ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[23]     ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[23]     ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[2]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[2]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[2]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[2]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[3]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[3]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[3]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[3]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[4]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[4]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[4]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[4]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[5]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[5]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[5]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[5]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[6]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[6]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[6]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[6]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[7]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[7]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[7]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[7]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[8]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[8]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[8]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[8]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[9]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[9]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|outcount[9]      ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|outcount[9]      ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|trigger_count[0] ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|trigger_count[0] ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|trigger_count[0] ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|trigger_count[0] ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|trigger_count[1] ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|trigger_count[1] ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|trigger_count[1] ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|trigger_count[1] ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|trigger_count[2] ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|trigger_count[2] ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|trigger_count[2] ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|trigger_count[2] ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|trigger_count[3] ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|trigger_count[3] ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|trigger_count[3] ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|trigger_count[3] ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|trigger_count[4] ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|trigger_count[4] ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|trigger_count[4] ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|trigger_count[4] ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|trigger_count[5] ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|trigger_count[5] ; N/A                                                                                                                                                            ;
+; measuring:DSO_meas|trigger_count[5] ; post-fitting  ; connected ; Top            ; post-synthesis    ; measuring:DSO_meas|trigger_count[5] ; N/A                                                                                                                                                            ;
++-------------------------------------+---------------+-----------+----------------+-------------------+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge Partition Statistics                                                                                                      ;
++---------------------------------------------+--------+------------------+--------------------------------+--------------------------------+
+; Statistic                                   ; Top    ; sld_hub:auto_hub ; sld_signaltap:auto_signaltap_0 ; hard_block:auto_generated_inst ;
++---------------------------------------------+--------+------------------+--------------------------------+--------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 4110   ; 62               ; 736                            ; 0                              ;
+;                                             ;        ;                  ;                                ;                                ;
+; Combinational ALUT usage for logic          ; 8579   ; 93               ; 437                            ; 0                              ;
+;     -- 7 input functions                    ; 12     ; 1                ; 86                             ; 0                              ;
+;     -- 6 input functions                    ; 246    ; 9                ; 59                             ; 0                              ;
+;     -- 5 input functions                    ; 2261   ; 24               ; 126                            ; 0                              ;
+;     -- 4 input functions                    ; 2289   ; 16               ; 20                             ; 0                              ;
+;     -- <=3 input functions                  ; 3771   ; 43               ; 146                            ; 0                              ;
+; Memory ALUT usage                           ; 0      ; 0                ; 0                              ; 0                              ;
+;     -- 64-address deep                      ; 0      ; 0                ; 0                              ; 0                              ;
+;     -- 32-address deep                      ; 0      ; 0                ; 0                              ; 0                              ;
+;                                             ;        ;                  ;                                ;                                ;
+; Dedicated logic registers                   ; 494    ; 90               ; 1441                           ; 0                              ;
+;                                             ;        ;                  ;                                ;                                ;
+;                                             ;        ;                  ;                                ;                                ;
+; I/O pins                                    ; 41     ; 0                ; 0                              ; 2                              ;
+; I/O registers                               ; 0      ; 0                ; 0                              ; 0                              ;
+; Total block memory bits                     ; 122880 ; 0                ; 1409024                        ; 0                              ;
+; Total block memory implementation bits      ; 0      ; 0                ; 0                              ; 0                              ;
+; JTAG                                        ; 0      ; 0                ; 0                              ; 1                              ;
+; DSP block                                   ; 6      ; 0                ; 0                              ; 0                              ;
+;                                             ;        ;                  ;                                ;                                ;
+; Connections                                 ;        ;                  ;                                ;                                ;
+;     -- Input Connections                    ; 400    ; 134              ; 2366                           ; 1                              ;
+;     -- Registered Input Connections         ; 396    ; 109              ; 1647                           ; 0                              ;
+;     -- Output Connections                   ; 173    ; 414              ; 1                              ; 2313                           ;
+;     -- Registered Output Connections        ; 152    ; 413              ; 0                              ; 0                              ;
+;                                             ;        ;                  ;                                ;                                ;
+; Internal Connections                        ;        ;                  ;                                ;                                ;
+;     -- Total Connections                    ; 36370  ; 1051             ; 11815                          ; 2333                           ;
+;     -- Registered Connections               ; 3266   ; 870              ; 9033                           ; 0                              ;
+;                                             ;        ;                  ;                                ;                                ;
+; External Connections                        ;        ;                  ;                                ;                                ;
+;     -- Top                                  ; 0      ; 1                ; 172                            ; 400                            ;
+;     -- sld_hub:auto_hub                     ; 1      ; 20               ; 404                            ; 123                            ;
+;     -- sld_signaltap:auto_signaltap_0       ; 172    ; 404              ; 0                              ; 1791                           ;
+;     -- hard_block:auto_generated_inst       ; 400    ; 123              ; 1791                           ; 0                              ;
+;                                             ;        ;                  ;                                ;                                ;
+; Partition Interface                         ;        ;                  ;                                ;                                ;
+;     -- Input Ports                          ; 14     ; 21               ; 231                            ; 6                              ;
+;     -- Output Ports                         ; 55     ; 39               ; 184                            ; 14                             ;
+;     -- Bidir Ports                          ; 0      ; 0                ; 0                              ; 0                              ;
+;                                             ;        ;                  ;                                ;                                ;
+; Registered Ports                            ;        ;                  ;                                ;                                ;
+;     -- Registered Input Ports               ; 0      ; 13               ; 178                            ; 0                              ;
+;     -- Registered Output Ports              ; 0      ; 28               ; 173                            ; 0                              ;
+;                                             ;        ;                  ;                                ;                                ;
+; Port Connectivity                           ;        ;                  ;                                ;                                ;
+;     -- Input Ports driven by GND            ; 0      ; 1                ; 20                             ; 0                              ;
+;     -- Output Ports driven by GND           ; 0      ; 1                ; 0                              ; 0                              ;
+;     -- Input Ports driven by VCC            ; 0      ; 0                ; 0                              ; 0                              ;
+;     -- Output Ports driven by VCC           ; 0      ; 0                ; 0                              ; 0                              ;
+;     -- Input Ports with no Source           ; 0      ; 1                ; 35                             ; 0                              ;
+;     -- Output Ports with no Source          ; 0      ; 0                ; 0                              ; 0                              ;
+;     -- Input Ports with no Fanout           ; 0      ; 2                ; 40                             ; 0                              ;
+;     -- Output Ports with no Fanout          ; 0      ; 15               ; 173                            ; 0                              ;
++---------------------------------------------+--------+------------------+--------------------------------+--------------------------------+
+Note: Resource usage numbers presented for Partitions containing post-synthesis logic are estimates.  For Partitions containing post-fit logic, resource usage numbers are accurate based on previous placement information.  Actual Fitter results may vary depending on current Fitter Preservation Level assignments.
+
+
++----------------------------------------------------------------------------------------+
+; Partition Merge Partition Pin Processing                                               ;
++-----------------------------------+-----------+---------------+----------+-------------+
+; Name                              ; Partition ; Type          ; Location ; Status      ;
++-----------------------------------+-----------+---------------+----------+-------------+
+; 25Mclk_vga                        ; Top       ; Output Port   ; n/a      ;             ;
+;     -- 25Mclk_vga                 ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- 25Mclk_vga~output          ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; 50Mclk                            ; Top       ; Input Port    ; n/a      ;             ;
+;     -- 50Mclk                     ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- 50Mclk~input               ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; ADC_CONVS                         ; Top       ; Output Port   ; n/a      ;             ;
+;     -- ADC_CONVS                  ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- ADC_CONVS~output           ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; ADC_DIN                           ; Top       ; Output Port   ; n/a      ;             ;
+;     -- ADC_DIN                    ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- ADC_DIN~output             ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; ADC_DOUT                          ; Top       ; Input Port    ; n/a      ;             ;
+;     -- ADC_DOUT                   ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- ADC_DOUT~input             ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; ADC_SCLK                          ; Top       ; Output Port   ; n/a      ;             ;
+;     -- ADC_SCLK                   ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- ADC_SCLK~output            ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; altera_reserved_tck               ; Top       ; Input Port    ; n/a      ;             ;
+;     -- altera_reserved_tck        ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- altera_reserved_tck~input  ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; altera_reserved_tdi               ; Top       ; Input Port    ; n/a      ;             ;
+;     -- altera_reserved_tdi        ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- altera_reserved_tdi~input  ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; altera_reserved_tdo               ; Top       ; Output Port   ; n/a      ;             ;
+;     -- altera_reserved_tdo        ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- altera_reserved_tdo~output ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; altera_reserved_tms               ; Top       ; Input Port    ; n/a      ;             ;
+;     -- altera_reserved_tms        ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- altera_reserved_tms~input  ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; color_data[0]                     ; Top       ; Output Port   ; n/a      ;             ;
+;     -- color_data[0]              ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- color_data[0]~output       ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; color_data[10]                    ; Top       ; Output Port   ; n/a      ;             ;
+;     -- color_data[10]             ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- color_data[10]~output      ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; color_data[11]                    ; Top       ; Output Port   ; n/a      ;             ;
+;     -- color_data[11]             ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- color_data[11]~output      ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; color_data[12]                    ; Top       ; Output Port   ; n/a      ;             ;
+;     -- color_data[12]             ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- color_data[12]~output      ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; color_data[13]                    ; Top       ; Output Port   ; n/a      ;             ;
+;     -- color_data[13]             ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- color_data[13]~output      ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; color_data[14]                    ; Top       ; Output Port   ; n/a      ;             ;
+;     -- color_data[14]             ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- color_data[14]~output      ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; color_data[15]                    ; Top       ; Output Port   ; n/a      ;             ;
+;     -- color_data[15]             ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- color_data[15]~output      ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; color_data[16]                    ; Top       ; Output Port   ; n/a      ;             ;
+;     -- color_data[16]             ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- color_data[16]~output      ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; color_data[17]                    ; Top       ; Output Port   ; n/a      ;             ;
+;     -- color_data[17]             ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- color_data[17]~output      ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; color_data[18]                    ; Top       ; Output Port   ; n/a      ;             ;
+;     -- color_data[18]             ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- color_data[18]~output      ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; color_data[19]                    ; Top       ; Output Port   ; n/a      ;             ;
+;     -- color_data[19]             ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- color_data[19]~output      ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; color_data[1]                     ; Top       ; Output Port   ; n/a      ;             ;
+;     -- color_data[1]              ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- color_data[1]~output       ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; color_data[20]                    ; Top       ; Output Port   ; n/a      ;             ;
+;     -- color_data[20]             ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- color_data[20]~output      ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; color_data[21]                    ; Top       ; Output Port   ; n/a      ;             ;
+;     -- color_data[21]             ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- color_data[21]~output      ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; color_data[22]                    ; Top       ; Output Port   ; n/a      ;             ;
+;     -- color_data[22]             ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- color_data[22]~output      ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; color_data[23]                    ; Top       ; Output Port   ; n/a      ;             ;
+;     -- color_data[23]             ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- color_data[23]~output      ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; color_data[2]                     ; Top       ; Output Port   ; n/a      ;             ;
+;     -- color_data[2]              ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- color_data[2]~output       ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; color_data[3]                     ; Top       ; Output Port   ; n/a      ;             ;
+;     -- color_data[3]              ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- color_data[3]~output       ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; color_data[4]                     ; Top       ; Output Port   ; n/a      ;             ;
+;     -- color_data[4]              ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- color_data[4]~output       ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; color_data[5]                     ; Top       ; Output Port   ; n/a      ;             ;
+;     -- color_data[5]              ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- color_data[5]~output       ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; color_data[6]                     ; Top       ; Output Port   ; n/a      ;             ;
+;     -- color_data[6]              ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- color_data[6]~output       ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; color_data[7]                     ; Top       ; Output Port   ; n/a      ;             ;
+;     -- color_data[7]              ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- color_data[7]~output       ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; color_data[8]                     ; Top       ; Output Port   ; n/a      ;             ;
+;     -- color_data[8]              ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- color_data[8]~output       ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; color_data[9]                     ; Top       ; Output Port   ; n/a      ;             ;
+;     -- color_data[9]              ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- color_data[9]~output       ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; hscan_switch                      ; Top       ; Input Port    ; n/a      ;             ;
+;     -- hscan_switch               ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- hscan_switch~input         ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; model_sel                         ; Top       ; Input Port    ; n/a      ;             ;
+;     -- model_sel                  ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- model_sel~input            ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; pause                             ; Top       ; Input Port    ; n/a      ;             ;
+;     -- pause                      ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- pause~input                ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; pre_syn.bp.DSO_meas_freqBi_0_     ; Top       ; Output Port   ; n/a      ;             ;
+;                                   ;           ;               ;          ;             ;
+; pre_syn.bp.DSO_meas_freqBi_10_    ; Top       ; Output Port   ; n/a      ;             ;
+;                                   ;           ;               ;          ;             ;
+; pre_syn.bp.DSO_meas_freqBi_11_    ; Top       ; Output Port   ; n/a      ;             ;
+;                                   ;           ;               ;          ;             ;
+; pre_syn.bp.DSO_meas_freqBi_12_    ; Top       ; Output Port   ; n/a      ;             ;
+;                                   ;           ;               ;          ;             ;
+; pre_syn.bp.DSO_meas_freqBi_13_    ; Top       ; Output Port   ; n/a      ;             ;
+;                                   ;           ;               ;          ;             ;
+; pre_syn.bp.DSO_meas_freqBi_14_    ; Top       ; Output Port   ; n/a      ;             ;
+;                                   ;           ;               ;          ;             ;
+; pre_syn.bp.DSO_meas_freqBi_15_    ; Top       ; Output Port   ; n/a      ;             ;
+;                                   ;           ;               ;          ;             ;
+; pre_syn.bp.DSO_meas_freqBi_16_    ; Top       ; Output Port   ; n/a      ;             ;
+;                                   ;           ;               ;          ;             ;
+; pre_syn.bp.DSO_meas_freqBi_17_    ; Top       ; Output Port   ; n/a      ;             ;
+;                                   ;           ;               ;          ;             ;
+; pre_syn.bp.DSO_meas_freqBi_18_    ; Top       ; Output Port   ; n/a      ;             ;
+;                                   ;           ;               ;          ;             ;
+; pre_syn.bp.DSO_meas_freqBi_19_    ; Top       ; Output Port   ; n/a      ;             ;
+;                                   ;           ;               ;          ;             ;
+; pre_syn.bp.DSO_meas_freqBi_1_     ; Top       ; Output Port   ; n/a      ;             ;
+;                                   ;           ;               ;          ;             ;
+; pre_syn.bp.DSO_meas_freqBi_2_     ; Top       ; Output Port   ; n/a      ;             ;
+;                                   ;           ;               ;          ;             ;
+; pre_syn.bp.DSO_meas_freqBi_3_     ; Top       ; Output Port   ; n/a      ;             ;
+;                                   ;           ;               ;          ;             ;
+; pre_syn.bp.DSO_meas_freqBi_4_     ; Top       ; Output Port   ; n/a      ;             ;
+;                                   ;           ;               ;          ;             ;
+; pre_syn.bp.DSO_meas_freqBi_5_     ; Top       ; Output Port   ; n/a      ;             ;
+;                                   ;           ;               ;          ;             ;
+; pre_syn.bp.DSO_meas_freqBi_6_     ; Top       ; Output Port   ; n/a      ;             ;
+;                                   ;           ;               ;          ;             ;
+; pre_syn.bp.DSO_meas_freqBi_7_     ; Top       ; Output Port   ; n/a      ;             ;
+;                                   ;           ;               ;          ;             ;
+; pre_syn.bp.DSO_meas_freqBi_8_     ; Top       ; Output Port   ; n/a      ;             ;
+;                                   ;           ;               ;          ;             ;
+; pre_syn.bp.DSO_meas_freqBi_9_     ; Top       ; Output Port   ; n/a      ;             ;
+;                                   ;           ;               ;          ;             ;
+; pre_syn.bp.DSO_meas_precheck      ; Top       ; Output Port   ; n/a      ;             ;
+;                                   ;           ;               ;          ;             ;
+; pre_syn.bp.DSO_meas_state         ; Top       ; Output Port   ; n/a      ;             ;
+;                                   ;           ;               ;          ;             ;
+; rst                               ; Top       ; Input Port    ; n/a      ;             ;
+;     -- rst                        ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- rst~input                  ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; save                              ; Top       ; Input Port    ; n/a      ;             ;
+;     -- save                       ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- save~input                 ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; trigvol_switch                    ; Top       ; Input Port    ; n/a      ;             ;
+;     -- trigvol_switch             ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- trigvol_switch~input       ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; vga_blank_n                       ; Top       ; Output Port   ; n/a      ;             ;
+;     -- vga_blank_n                ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- vga_blank_n~output         ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; vga_hs                            ; Top       ; Output Port   ; n/a      ;             ;
+;     -- vga_hs                     ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- vga_hs~output              ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; vga_left                          ; Top       ; Input Port    ; n/a      ;             ;
+;     -- vga_left                   ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- vga_left~input             ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; vga_right                         ; Top       ; Input Port    ; n/a      ;             ;
+;     -- vga_right                  ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- vga_right~input            ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; vga_sync                          ; Top       ; Output Port   ; n/a      ;             ;
+;     -- vga_sync                   ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- vga_sync~output            ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; vga_vol_switch                    ; Top       ; Input Port    ; n/a      ;             ;
+;     -- vga_vol_switch             ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- vga_vol_switch~input       ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
+; vga_vs                            ; Top       ; Output Port   ; n/a      ;             ;
+;     -- vga_vs                     ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- vga_vs~output              ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                                   ;           ;               ;          ;             ;
++-----------------------------------+-----------+---------------+----------+-------------+
+
+
++------------------------------------------------------------+
+; Partition Merge Resource Usage Summary                     ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimate of Logic utilization (ALMs needed) ; 4956         ;
+;                                             ;              ;
+; Combinational ALUT usage for logic          ; 9109         ;
+;     -- 7 input functions                    ; 99           ;
+;     -- 6 input functions                    ; 314          ;
+;     -- 5 input functions                    ; 2411         ;
+;     -- 4 input functions                    ; 2325         ;
+;     -- <=3 input functions                  ; 3960         ;
+;                                             ;              ;
+; Dedicated logic registers                   ; 2025         ;
+;                                             ;              ;
+; I/O pins                                    ; 43           ;
+; Total MLAB memory bits                      ; 0            ;
+; Total block memory bits                     ; 1531904      ;
+; Total DSP Blocks                            ; 6            ;
+; Total PLLs                                  ; 3            ;
+;     -- PLLs                                 ; 3            ;
+;                                             ;              ;
+; Maximum fan-out node                        ; 50Mclk~input ;
+; Maximum fan-out                             ; 1041         ;
+; Total fan-out                               ; 48291        ;
+; Average fan-out                             ; 4.22         ;
++---------------------------------------------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge RAM Summary                                                                                                                                                                                                                                                                                  ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+---------+------+
+; Name                                                                                                                                                                                                  ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size    ; MIF  ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+---------+------+
+; FIFO:DSO_FIFO|dcfifo:dcfifo_component|dcfifo_p3r1:auto_generated|altsyncram_ms91:fifo_ram|ALTSYNCRAM                                                                                                  ; AUTO ; Simple Dual Port ; 4096         ; 10           ; 4096         ; 10           ; 40960   ; None ;
+; RAM:DSO_RAM|altsyncram:altsyncram_component|altsyncram_7ht1:auto_generated|ALTSYNCRAM                                                                                                                 ; AUTO ; Simple Dual Port ; 4096         ; 10           ; 4096         ; 10           ; 40960   ; None ;
+; RAM_save:inst8|altsyncram:altsyncram_component|altsyncram_7ht1:auto_generated|ALTSYNCRAM                                                                                                              ; AUTO ; Simple Dual Port ; 4096         ; 10           ; 4096         ; 10           ; 40960   ; None ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_9884:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 16384        ; 86           ; 16384        ; 86           ; 1409024 ; None ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+---------+------+
+
+
++---------------------------------------------------------------------------------------+
+; Partition Merge DSP Block Usage Summary                                               ;
++-------------------------------+-------------+---------------------+-------------------+
+; Statistic                     ; Number Used ; Available per Block ; Maximum Available ;
++-------------------------------+-------------+---------------------+-------------------+
+; Independent 18x18             ; 5           ; 2.00                ; --                ;
+; Sum of two 18x18              ; 1           ; 1.00                ; --                ;
+; DSP Block                     ; 6           ; --                  ; --                ;
+; DSP 18-bit Element            ; 7           ; 2.00                ; --                ;
+; Unsigned Multiplier           ; 5           ; --                  ; --                ;
+; Mixed Sign Multiplier         ; 2           ; --                  ; --                ;
+; Dedicated Pre-Adder           ; 1           ; --                  ; --                ;
+; Dedicated Coefficient Storage ; 1           ; --                  ; --                ;
++-------------------------------+-------------+---------------------+-------------------+
+
+
++--------------------------+
+; Partition Merge Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Partition Merge
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Full Version
+    Info: Processing started: Sun Jan 13 00:42:22 2019
+Info: Command: quartus_cdb --read_settings_files=off --write_settings_files=off DSO -c DSO --merge=on
+Warning (35010): Previously generated Fitter netlist for partition "Top" is older than current Synthesis netlist -- using the current Synthesis netlist instead to ensure that the latest source changes are included
+    Info (35011): Set the option to Ignore source file changes to force the Quartus II software to always use a previously generated Fitter netlist
+Info (35007): Using synthesis netlist for partition "Top"
+Info (35007): Using synthesis netlist for partition "sld_hub:auto_hub"
+Info (35007): Using synthesis netlist for partition "sld_signaltap:auto_signaltap_0"
+Critical Warning (35025): Partially connected in-system debug instance "auto_signaltap_0" to 153 of its 173 required data inputs, trigger inputs, acquisition clocks, and dynamic pins.  There were 0 illegal, 0 inaccessible, and 20 missing sources or connections.
+Info (35002): Resolved and merged 3 partition(s)
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 16 node(s), including 0 DDIO, 3 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 10674 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 14 input pins
+    Info (21059): Implemented 33 output pins
+    Info (21061): Implemented 10415 logic cells
+    Info (21064): Implemented 202 RAM segments
+    Info (21065): Implemented 3 PLLs
+    Info (21062): Implemented 6 DSP elements
+Info: Quartus II 64-Bit Partition Merge was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 4748 megabytes
+    Info: Processing ended: Sun Jan 13 00:42:26 2019
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:04
+
+

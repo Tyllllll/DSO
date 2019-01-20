@@ -1,0 +1,23 @@
+------------------------------------------------------------------------
+--
+--        Copyright (C) 2018
+--        All rights reserved
+--
+--        filename: trigger_sec
+--
+--        created by Tyl at 2019-01-06 15:16:43
+--        modified by Tyl at 2019-01-06 20:32:29
+--
+------------------------------------------------------------------------
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity trigger_sec is
+	port(
+		clk, rst: in std_logic;
+		enable: in std_logic;
+		FIFO_data: in std_logic_vector(7 downto 0);
+		RAM_data: out std_logic_vector(7 downto 0);
+		FIFORen: out std_logic
+	);
+end trigger_sec;

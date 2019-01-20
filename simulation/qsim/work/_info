@@ -1,0 +1,165 @@
+m255
+K3
+13
+cModel Technology
+Z0 dE:\Quartus\VHDL\DSO\simulation\qsim
+vAD_ctr
+Z1 !s100 ;?IY2^]?3H7`0_2E=;D5X3
+Z2 IC]8FjG@BSmNkNT3LOUi`J2
+Z3 VXG@m1<OFKjG>2BOdO@]4L2
+Z4 dE:\Quartus\VHDL\DSO\simulation\qsim
+Z5 w1546878587
+Z6 8DSO.vo
+Z7 FDSO.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|DSO.vo|
+Z10 o-work work -O0
+Z11 n@a@d_ctr
+Z12 !s108 1546878589.229000
+Z13 !s107 DSO.vo|
+!i10b 1
+!s85 0
+!s101 -O0
+vAD_ctr_vlg_check_tst
+Z14 IEE0Mh;NRRTkNbGo?kNB`^3
+Z15 VU`_4?nX@1geRoak@Bb<G82
+R4
+Z16 w1546878584
+Z17 8AD_ctr.vwf.vt
+Z18 FAD_ctr.vwf.vt
+L0 61
+R8
+r1
+31
+Z19 !s108 1546878589.481000
+Z20 !s107 AD_ctr.vwf.vt|
+Z21 !s90 -work|work|AD_ctr.vwf.vt|
+R10
+Z22 n@a@d_ctr_vlg_check_tst
+Z23 !s100 4`ZZcg5EWL_m4fkFgTQEA0
+!i10b 1
+!s85 0
+!s101 -O0
+vAD_ctr_vlg_sample_tst
+Z24 !s100 gO@l^_6MKi2E[QK15IDZP3
+Z25 I2zER:S3?BPdE<lJ]2kA>:2
+Z26 VC_RWknZRL:A]N:NQo6U3P3
+R4
+R16
+R17
+R18
+L0 29
+R8
+r1
+31
+R19
+R20
+R21
+R10
+Z27 n@a@d_ctr_vlg_sample_tst
+!i10b 1
+!s85 0
+!s101 -O0
+vAD_ctr_vlg_vec_tst
+Z28 I@2J1a8?QTImzCGClMN[C>1
+Z29 V>hZ72@M3`EiaB4[3QL];82
+R4
+R16
+R17
+R18
+Z30 L0 434
+R8
+r1
+31
+R19
+R20
+R21
+R10
+Z31 n@a@d_ctr_vlg_vec_tst
+Z32 !s100 3GDzIheBnRk1_edmJcQJD0
+!i10b 1
+!s85 0
+!s101 -O0
+vFIFO
+Z33 I05a]eJWZdLZ7z5777ElZO3
+Z34 VjDC:<Y0E_>fkX`l8JcCR51
+R4
+Z35 w1546879914
+R6
+R7
+L0 31
+R8
+r1
+31
+R9
+R10
+Z36 n@f@i@f@o
+!i10b 1
+Z37 !s100 DlV^<Hh719h70JR4YPR8H0
+!s85 0
+Z38 !s108 1546879916.088000
+R13
+!s101 -O0
+vFIFO_vlg_check_tst
+!i10b 1
+!s100 J@?5@^[RUJUP?[Dc:Rjd12
+I_T_llO>BaeNFI3z]T18HJ0
+Veg`CTAOB53D1W[W=A;nMY3
+R4
+Z39 w1546879911
+Z40 8FIFO_sim.vwf.vt
+Z41 FFIFO_sim.vwf.vt
+L0 67
+R8
+r1
+!s85 0
+31
+Z42 !s108 1546879916.463000
+Z43 !s107 FIFO_sim.vwf.vt|
+Z44 !s90 -work|work|FIFO_sim.vwf.vt|
+!s101 -O0
+R10
+n@f@i@f@o_vlg_check_tst
+vFIFO_vlg_sample_tst
+!i10b 1
+!s100 KHJH3;:35o^`D`QZEG=]a3
+IZP?FK^W6DTeD:Th4MhFE_2
+Vk?74IW]C>Y_lngYQzGnnC2
+R4
+R39
+R40
+R41
+L0 29
+R8
+r1
+!s85 0
+31
+R42
+R43
+R44
+!s101 -O0
+R10
+n@f@i@f@o_vlg_sample_tst
+vFIFO_vlg_vec_tst
+!i10b 1
+!s100 `Nc<MAbO]Vj7:UDW=:Gb61
+Ik3Ii3DY>oi=FEOiGJ4=?33
+Vi=HO476]0^iTk[;dkOAgL1
+R4
+R39
+R40
+R41
+L0 529
+R8
+r1
+!s85 0
+31
+R42
+R43
+R44
+!s101 -O0
+R10
+n@f@i@f@o_vlg_vec_tst

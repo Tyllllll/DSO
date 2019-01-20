@@ -1,0 +1,28 @@
+------------------------------------------------------------------------
+--
+--        Copyright (C) 2018
+--        All rights reserved
+--
+--        filename: RAM_ctr
+--
+--        created by Tyl at 2019-01-06 08:57:33
+--        modified by Tyl at 2019-01-06 16:51:44
+--
+------------------------------------------------------------------------
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity RAM_ctr is
+	port(
+		clk, rst: in std_logic;
+		half_FIFO_used: in std_logic;
+		RAMWFull: in std_logic;
+		ready_save: in std_logic;
+		RAMWen: out std_logic;
+		RAMRen: out std_logic;
+		RAMWCten: out std_logic;
+		RAMRCten: out std_logic;
+		Displayen: out std_logic;
+		Flashen: out std_logic
+	);
+end RAM_ctr;

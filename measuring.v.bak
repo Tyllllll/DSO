@@ -1,0 +1,136 @@
+//======================================================================
+//
+//        Copyright (C) 2018
+//        All rights reserved
+//
+//        filename: measuring
+//
+//        created by Tyl at 2019-01-11 16:27:29
+//        modified by Tyl at 2019-01-11 19:58:15
+//
+//======================================================================
+// Quartus II Verilog Template
+// 4-State Moore state machine
+
+// A Moore machine's outputs are dependent only on the current state.
+// The output is written only when the state changes.  (State
+// transitions are synchronous.)
+
+module measuring
+(
+	input	clk, reset, hscan_switch,
+	input [9: 0]data,
+	/*output [9: 0]pretest, midtest, retest, maxvoltest,
+	output [2: 0]countertest,
+	output [1: 0]statetest,
+	output [12: 0]Ncounttest,*/
+	output reg [23: 0]freqBCD,
+	output reg [9: 0]vol
+);
+
+	// Declare state register
+	reg		[1:0]state;
+
+	// Declare states
+	parameter S0 = 0, S1 = 1, S2 = 2;
+	
+	reg [9: 0]pre;
+	reg [9: 0]mid;
+	reg [9: 0]re;
+	integer counter;
+	parameter trigger_num = 10'b10_0000_0000;
+	integer Ncount;
+	reg [9: 0]maxvol;
+	reg [19: 0]freqBi;
+	reg [19: 0]freqBitemp;
+	reg BCDHigh;
+
+	//测试模块
+	/*assign pretest = pre;
+	assign midtest = mid;
+	assign retest = re;
+	assign maxvoltest = maxvol;
+	assign countertest = counter;
+	assign statetest = state;
+	assign Ncounttest = Ncount;*/
+	
+	//转换频率为BCD码			while部分有bug！！！！
+	/*always@(freqBi)
+	begin
+		BCDHigh = 0;
+		freqBitemp = freqBi;
+		while(freqBi > 9)
+		begin
+			BCDHigh = BCDHigh + 1;
+			freqBitemp = freqBitemp - 10;
+		end
+		freqBCD <= {(BCDHigh << 4), freqBitemp};
+	end*/
+
+	// Determine the next state and output
+	always @ (posedge clk or posedge reset)
+	begin
+		if (reset)
+			state <= S0;
+		else
+			case (state)
+				S0:
+				begin
+					pre <= data;
+					mid <= pre;
+					re <= mid;
+					counter <= counter + 1;
+					//判断读了3个
+					if(counter == 3)
+						//判断触发
+						if(pre > trigger_num && re < trigger_num)
+							state <= S2;
+						else
+							state <= S1;
+					else
+						state <= S0;
+				end
+				S1:
+				begin
+					pre <= data;
+					mid <= pre;
+					re <= mid;
+					//判断触发
+					if(pre > trigger_num && re < trigger_num)
+					begin
+						Ncount <= 'b0;
+						maxvol <= 'b0;
+						state <= S2;
+					end
+					else
+						state <= S1;					
+				end
+				S2:
+				begin
+					pre <= data;
+					mid <= pre;
+					re <= mid;
+					Ncount <= Ncount + 1;
+					if(maxvol < data)
+						maxvol <= data;
+					//判断触发
+					if(pre > trigger_num && re < trigger_num)
+					begin
+						//频率计算
+						if(hscan_switch == 'b0)
+							//500kHz采样速率
+							freqBCD <= 500000 / Ncount;
+						else
+							//2.5kHz采样速率
+							freqBCD <= 2500 / Ncount;
+						vol <= maxvol;
+						//频率输出
+						Ncount <= 'b1;
+						maxvol <= data;
+					end
+					else
+						state <= S2;
+				end
+			endcase
+	end
+endmodule

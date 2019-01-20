@@ -1,0 +1,597 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "01/09/2019 09:57:32"
+                                                                        
+// Verilog Self-Checking Test Bench (with test vectors) for design :    addr_counter
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module addr_counter_vlg_sample_tst(
+	clk,
+	RAMRCten,
+	RAMWCten,
+	reset,
+	sampler_tx
+);
+input  clk;
+input  RAMRCten;
+input  RAMWCten;
+input  reset;
+output sampler_tx;
+
+reg sample;
+time current_time;
+always @(clk or RAMRCten or RAMWCten or reset)
+                                                                                
+begin                                                 
+ if ($realtime > 0)                                   
+ begin                                                
+	if ($realtime == 0 || $realtime != current_time)  
+	begin									          
+		if (sample === 1'bx)                          
+			sample = 0;                               
+		else                                          
+			sample = ~sample;                         
+	end										          
+	current_time = $realtime;					      
+ end                                                  
+end                                                   
+
+assign sampler_tx = sample;
+endmodule
+
+module addr_counter_vlg_check_tst (
+	RAMRadr,
+	RAMRCO,
+	RAMWadr,
+	RAMWCO,
+	sampler_rx
+);
+input [8:0] RAMRadr;
+input  RAMRCO;
+input [8:0] RAMWadr;
+input  RAMWCO;
+input sampler_rx;
+
+reg [8:0] RAMRadr_expected;
+reg  RAMRCO_expected;
+reg [8:0] RAMWadr_expected;
+reg  RAMWCO_expected;
+
+reg [8:0] RAMRadr_prev;
+reg  RAMRCO_prev;
+reg [8:0] RAMWadr_prev;
+reg  RAMWCO_prev;
+
+reg [8:0] RAMRadr_expected_prev;
+reg  RAMRCO_expected_prev;
+reg [8:0] RAMWadr_expected_prev;
+reg  RAMWCO_expected_prev;
+
+reg [8:0] last_RAMRadr_exp;
+reg  last_RAMRCO_exp;
+reg [8:0] last_RAMWadr_exp;
+reg  last_RAMWCO_exp;
+
+reg trigger;
+
+integer i;
+integer nummismatches;
+
+reg [1:4] on_first_change ;
+
+
+initial
+begin
+trigger = 0;
+i = 0;
+nummismatches = 0;
+on_first_change = 4'b1;
+end
+
+// update real /o prevs
+
+always @(trigger)
+begin
+	RAMRadr_prev = RAMRadr;
+	RAMRCO_prev = RAMRCO;
+	RAMWadr_prev = RAMWadr;
+	RAMWCO_prev = RAMWCO;
+end
+
+// update expected /o prevs
+
+always @(trigger)
+begin
+	RAMRadr_expected_prev = RAMRadr_expected;
+	RAMRCO_expected_prev = RAMRCO_expected;
+	RAMWadr_expected_prev = RAMWadr_expected;
+	RAMWCO_expected_prev = RAMWCO_expected;
+end
+
+
+// expected RAMRadr[ 8 ]
+initial
+begin
+	RAMRadr_expected[8] = 1'bX;
+end 
+// expected RAMRadr[ 7 ]
+initial
+begin
+	RAMRadr_expected[7] = 1'bX;
+end 
+// expected RAMRadr[ 6 ]
+initial
+begin
+	RAMRadr_expected[6] = 1'bX;
+end 
+// expected RAMRadr[ 5 ]
+initial
+begin
+	RAMRadr_expected[5] = 1'bX;
+end 
+// expected RAMRadr[ 4 ]
+initial
+begin
+	RAMRadr_expected[4] = 1'bX;
+end 
+// expected RAMRadr[ 3 ]
+initial
+begin
+	RAMRadr_expected[3] = 1'bX;
+end 
+// expected RAMRadr[ 2 ]
+initial
+begin
+	RAMRadr_expected[2] = 1'bX;
+end 
+// expected RAMRadr[ 1 ]
+initial
+begin
+	RAMRadr_expected[1] = 1'bX;
+end 
+// expected RAMRadr[ 0 ]
+initial
+begin
+	RAMRadr_expected[0] = 1'bX;
+end 
+
+// expected RAMRCO
+initial
+begin
+	RAMRCO_expected = 1'bX;
+end 
+// expected RAMWadr[ 8 ]
+initial
+begin
+	RAMWadr_expected[8] = 1'bX;
+end 
+// expected RAMWadr[ 7 ]
+initial
+begin
+	RAMWadr_expected[7] = 1'bX;
+end 
+// expected RAMWadr[ 6 ]
+initial
+begin
+	RAMWadr_expected[6] = 1'bX;
+end 
+// expected RAMWadr[ 5 ]
+initial
+begin
+	RAMWadr_expected[5] = 1'bX;
+end 
+// expected RAMWadr[ 4 ]
+initial
+begin
+	RAMWadr_expected[4] = 1'bX;
+end 
+// expected RAMWadr[ 3 ]
+initial
+begin
+	RAMWadr_expected[3] = 1'bX;
+end 
+// expected RAMWadr[ 2 ]
+initial
+begin
+	RAMWadr_expected[2] = 1'bX;
+end 
+// expected RAMWadr[ 1 ]
+initial
+begin
+	RAMWadr_expected[1] = 1'bX;
+end 
+// expected RAMWadr[ 0 ]
+initial
+begin
+	RAMWadr_expected[0] = 1'bX;
+end 
+
+// expected RAMWCO
+initial
+begin
+	RAMWCO_expected = 1'bX;
+end 
+// generate trigger
+always @(RAMRadr_expected or RAMRadr or RAMRCO_expected or RAMRCO or RAMWadr_expected or RAMWadr or RAMWCO_expected or RAMWCO)
+begin
+	trigger <= ~trigger;
+end
+
+always @(posedge sampler_rx or negedge sampler_rx)
+begin
+`ifdef debug_tbench
+	$display("Scanning pattern %d @time = %t",i,$realtime );
+	i = i + 1;
+	$display("| expected RAMRadr = %b | expected RAMRCO = %b | expected RAMWadr = %b | expected RAMWCO = %b | ",RAMRadr_expected_prev,RAMRCO_expected_prev,RAMWadr_expected_prev,RAMWCO_expected_prev);
+	$display("| real RAMRadr = %b | real RAMRCO = %b | real RAMWadr = %b | real RAMWCO = %b | ",RAMRadr_prev,RAMRCO_prev,RAMWadr_prev,RAMWCO_prev);
+`endif
+	if (
+		( RAMRadr_expected_prev[0] !== 1'bx ) && ( RAMRadr_prev[0] !== RAMRadr_expected_prev[0] )
+		&& ((RAMRadr_expected_prev[0] !== last_RAMRadr_exp[0]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port RAMRadr[0] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", RAMRadr_expected_prev);
+		$display ("     Real value = %b", RAMRadr_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_RAMRadr_exp[0] = RAMRadr_expected_prev[0];
+	end
+	if (
+		( RAMRadr_expected_prev[1] !== 1'bx ) && ( RAMRadr_prev[1] !== RAMRadr_expected_prev[1] )
+		&& ((RAMRadr_expected_prev[1] !== last_RAMRadr_exp[1]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port RAMRadr[1] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", RAMRadr_expected_prev);
+		$display ("     Real value = %b", RAMRadr_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_RAMRadr_exp[1] = RAMRadr_expected_prev[1];
+	end
+	if (
+		( RAMRadr_expected_prev[2] !== 1'bx ) && ( RAMRadr_prev[2] !== RAMRadr_expected_prev[2] )
+		&& ((RAMRadr_expected_prev[2] !== last_RAMRadr_exp[2]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port RAMRadr[2] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", RAMRadr_expected_prev);
+		$display ("     Real value = %b", RAMRadr_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_RAMRadr_exp[2] = RAMRadr_expected_prev[2];
+	end
+	if (
+		( RAMRadr_expected_prev[3] !== 1'bx ) && ( RAMRadr_prev[3] !== RAMRadr_expected_prev[3] )
+		&& ((RAMRadr_expected_prev[3] !== last_RAMRadr_exp[3]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port RAMRadr[3] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", RAMRadr_expected_prev);
+		$display ("     Real value = %b", RAMRadr_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_RAMRadr_exp[3] = RAMRadr_expected_prev[3];
+	end
+	if (
+		( RAMRadr_expected_prev[4] !== 1'bx ) && ( RAMRadr_prev[4] !== RAMRadr_expected_prev[4] )
+		&& ((RAMRadr_expected_prev[4] !== last_RAMRadr_exp[4]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port RAMRadr[4] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", RAMRadr_expected_prev);
+		$display ("     Real value = %b", RAMRadr_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_RAMRadr_exp[4] = RAMRadr_expected_prev[4];
+	end
+	if (
+		( RAMRadr_expected_prev[5] !== 1'bx ) && ( RAMRadr_prev[5] !== RAMRadr_expected_prev[5] )
+		&& ((RAMRadr_expected_prev[5] !== last_RAMRadr_exp[5]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port RAMRadr[5] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", RAMRadr_expected_prev);
+		$display ("     Real value = %b", RAMRadr_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_RAMRadr_exp[5] = RAMRadr_expected_prev[5];
+	end
+	if (
+		( RAMRadr_expected_prev[6] !== 1'bx ) && ( RAMRadr_prev[6] !== RAMRadr_expected_prev[6] )
+		&& ((RAMRadr_expected_prev[6] !== last_RAMRadr_exp[6]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port RAMRadr[6] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", RAMRadr_expected_prev);
+		$display ("     Real value = %b", RAMRadr_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_RAMRadr_exp[6] = RAMRadr_expected_prev[6];
+	end
+	if (
+		( RAMRadr_expected_prev[7] !== 1'bx ) && ( RAMRadr_prev[7] !== RAMRadr_expected_prev[7] )
+		&& ((RAMRadr_expected_prev[7] !== last_RAMRadr_exp[7]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port RAMRadr[7] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", RAMRadr_expected_prev);
+		$display ("     Real value = %b", RAMRadr_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_RAMRadr_exp[7] = RAMRadr_expected_prev[7];
+	end
+	if (
+		( RAMRadr_expected_prev[8] !== 1'bx ) && ( RAMRadr_prev[8] !== RAMRadr_expected_prev[8] )
+		&& ((RAMRadr_expected_prev[8] !== last_RAMRadr_exp[8]) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port RAMRadr[8] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", RAMRadr_expected_prev);
+		$display ("     Real value = %b", RAMRadr_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_RAMRadr_exp[8] = RAMRadr_expected_prev[8];
+	end
+	if (
+		( RAMRCO_expected_prev !== 1'bx ) && ( RAMRCO_prev !== RAMRCO_expected_prev )
+		&& ((RAMRCO_expected_prev !== last_RAMRCO_exp) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port RAMRCO :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", RAMRCO_expected_prev);
+		$display ("     Real value = %b", RAMRCO_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_RAMRCO_exp = RAMRCO_expected_prev;
+	end
+	if (
+		( RAMWadr_expected_prev[0] !== 1'bx ) && ( RAMWadr_prev[0] !== RAMWadr_expected_prev[0] )
+		&& ((RAMWadr_expected_prev[0] !== last_RAMWadr_exp[0]) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port RAMWadr[0] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", RAMWadr_expected_prev);
+		$display ("     Real value = %b", RAMWadr_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_RAMWadr_exp[0] = RAMWadr_expected_prev[0];
+	end
+	if (
+		( RAMWadr_expected_prev[1] !== 1'bx ) && ( RAMWadr_prev[1] !== RAMWadr_expected_prev[1] )
+		&& ((RAMWadr_expected_prev[1] !== last_RAMWadr_exp[1]) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port RAMWadr[1] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", RAMWadr_expected_prev);
+		$display ("     Real value = %b", RAMWadr_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_RAMWadr_exp[1] = RAMWadr_expected_prev[1];
+	end
+	if (
+		( RAMWadr_expected_prev[2] !== 1'bx ) && ( RAMWadr_prev[2] !== RAMWadr_expected_prev[2] )
+		&& ((RAMWadr_expected_prev[2] !== last_RAMWadr_exp[2]) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port RAMWadr[2] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", RAMWadr_expected_prev);
+		$display ("     Real value = %b", RAMWadr_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_RAMWadr_exp[2] = RAMWadr_expected_prev[2];
+	end
+	if (
+		( RAMWadr_expected_prev[3] !== 1'bx ) && ( RAMWadr_prev[3] !== RAMWadr_expected_prev[3] )
+		&& ((RAMWadr_expected_prev[3] !== last_RAMWadr_exp[3]) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port RAMWadr[3] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", RAMWadr_expected_prev);
+		$display ("     Real value = %b", RAMWadr_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_RAMWadr_exp[3] = RAMWadr_expected_prev[3];
+	end
+	if (
+		( RAMWadr_expected_prev[4] !== 1'bx ) && ( RAMWadr_prev[4] !== RAMWadr_expected_prev[4] )
+		&& ((RAMWadr_expected_prev[4] !== last_RAMWadr_exp[4]) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port RAMWadr[4] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", RAMWadr_expected_prev);
+		$display ("     Real value = %b", RAMWadr_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_RAMWadr_exp[4] = RAMWadr_expected_prev[4];
+	end
+	if (
+		( RAMWadr_expected_prev[5] !== 1'bx ) && ( RAMWadr_prev[5] !== RAMWadr_expected_prev[5] )
+		&& ((RAMWadr_expected_prev[5] !== last_RAMWadr_exp[5]) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port RAMWadr[5] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", RAMWadr_expected_prev);
+		$display ("     Real value = %b", RAMWadr_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_RAMWadr_exp[5] = RAMWadr_expected_prev[5];
+	end
+	if (
+		( RAMWadr_expected_prev[6] !== 1'bx ) && ( RAMWadr_prev[6] !== RAMWadr_expected_prev[6] )
+		&& ((RAMWadr_expected_prev[6] !== last_RAMWadr_exp[6]) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port RAMWadr[6] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", RAMWadr_expected_prev);
+		$display ("     Real value = %b", RAMWadr_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_RAMWadr_exp[6] = RAMWadr_expected_prev[6];
+	end
+	if (
+		( RAMWadr_expected_prev[7] !== 1'bx ) && ( RAMWadr_prev[7] !== RAMWadr_expected_prev[7] )
+		&& ((RAMWadr_expected_prev[7] !== last_RAMWadr_exp[7]) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port RAMWadr[7] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", RAMWadr_expected_prev);
+		$display ("     Real value = %b", RAMWadr_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_RAMWadr_exp[7] = RAMWadr_expected_prev[7];
+	end
+	if (
+		( RAMWadr_expected_prev[8] !== 1'bx ) && ( RAMWadr_prev[8] !== RAMWadr_expected_prev[8] )
+		&& ((RAMWadr_expected_prev[8] !== last_RAMWadr_exp[8]) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port RAMWadr[8] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", RAMWadr_expected_prev);
+		$display ("     Real value = %b", RAMWadr_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_RAMWadr_exp[8] = RAMWadr_expected_prev[8];
+	end
+	if (
+		( RAMWCO_expected_prev !== 1'bx ) && ( RAMWCO_prev !== RAMWCO_expected_prev )
+		&& ((RAMWCO_expected_prev !== last_RAMWCO_exp) ||
+			on_first_change[4])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port RAMWCO :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", RAMWCO_expected_prev);
+		$display ("     Real value = %b", RAMWCO_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[4] = 1'b0;
+		last_RAMWCO_exp = RAMWCO_expected_prev;
+	end
+
+	trigger <= ~trigger;
+end
+initial 
+
+begin 
+$timeformat(-12,3," ps",6);
+#60000000;
+if (nummismatches > 0)
+	$display ("%d mismatched vectors : Simulation failed !",nummismatches);
+else
+	$display ("Simulation passed !");
+$finish;
+end 
+endmodule
+
+module addr_counter_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg clk;
+reg RAMRCten;
+reg RAMWCten;
+reg reset;
+// wires                                               
+wire [8:0] RAMRadr;
+wire RAMRCO;
+wire [8:0] RAMWadr;
+wire RAMWCO;
+
+wire sampler;                             
+
+// assign statements (if any)                          
+addr_counter i1 (
+// port map - connection between master ports and signals/registers   
+	.clk(clk),
+	.RAMRadr(RAMRadr),
+	.RAMRCO(RAMRCO),
+	.RAMRCten(RAMRCten),
+	.RAMWadr(RAMWadr),
+	.RAMWCO(RAMWCO),
+	.RAMWCten(RAMWCten),
+	.reset(reset)
+);
+
+// clk
+always
+begin
+	clk = 1'b0;
+	clk = #50000 1'b1;
+	#50000;
+end 
+
+// RAMRCten
+initial
+begin
+	RAMRCten = 1'b1;
+end 
+
+// RAMWCten
+initial
+begin
+	RAMWCten = 1'b0;
+	RAMWCten = #8000000 1'b1;
+	RAMWCten = #7840000 1'b0;
+end 
+
+// reset
+initial
+begin
+	reset = 1'b0;
+end 
+
+addr_counter_vlg_sample_tst tb_sample (
+	.clk(clk),
+	.RAMRCten(RAMRCten),
+	.RAMWCten(RAMWCten),
+	.reset(reset),
+	.sampler_tx(sampler)
+);
+
+addr_counter_vlg_check_tst tb_out(
+	.RAMRadr(RAMRadr),
+	.RAMRCO(RAMRCO),
+	.RAMWadr(RAMWadr),
+	.RAMWCO(RAMWCO),
+	.sampler_rx(sampler)
+);
+endmodule
+

@@ -1,0 +1,495 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "01/09/2019 15:37:03"
+                                                                        
+// Verilog Self-Checking Test Bench (with test vectors) for design :    RAM_ctr
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module RAM_ctr_vlg_sample_tst(
+	clk,
+	RAMRCO,
+	RAMWCO,
+	reset,
+	save,
+	trigger_ready,
+	sampler_tx
+);
+input  clk;
+input  RAMRCO;
+input  RAMWCO;
+input  reset;
+input  save;
+input  trigger_ready;
+output sampler_tx;
+
+reg sample;
+time current_time;
+always @(clk or RAMRCO or RAMWCO or reset or save or trigger_ready)
+                                                                                
+begin                                                 
+ if ($realtime > 0)                                   
+ begin                                                
+	if ($realtime == 0 || $realtime != current_time)  
+	begin									          
+		if (sample === 1'bx)                          
+			sample = 0;                               
+		else                                          
+			sample = ~sample;                         
+	end										          
+	current_time = $realtime;					      
+ end                                                  
+end                                                   
+
+assign sampler_tx = sample;
+endmodule
+
+module RAM_ctr_vlg_check_tst (
+	Displayen,
+	Flashen,
+	NRAMRen,
+	NRAMWen,
+	RAMRen,
+	RAMWen,
+	save_flagtest,
+	statetest,
+	sampler_rx
+);
+input  Displayen;
+input  Flashen;
+input  NRAMRen;
+input  NRAMWen;
+input  RAMRen;
+input  RAMWen;
+input  save_flagtest;
+input [2:0] statetest;
+input sampler_rx;
+
+reg  Displayen_expected;
+reg  Flashen_expected;
+reg  NRAMRen_expected;
+reg  NRAMWen_expected;
+reg  RAMRen_expected;
+reg  RAMWen_expected;
+reg  save_flagtest_expected;
+reg [2:0] statetest_expected;
+
+reg  Displayen_prev;
+reg  Flashen_prev;
+reg  NRAMRen_prev;
+reg  NRAMWen_prev;
+reg  RAMRen_prev;
+reg  RAMWen_prev;
+reg  save_flagtest_prev;
+reg [2:0] statetest_prev;
+
+reg  Displayen_expected_prev;
+reg  Flashen_expected_prev;
+reg  NRAMRen_expected_prev;
+reg  NRAMWen_expected_prev;
+reg  RAMRen_expected_prev;
+reg  RAMWen_expected_prev;
+reg  save_flagtest_expected_prev;
+reg [2:0] statetest_expected_prev;
+
+reg  last_Displayen_exp;
+reg  last_Flashen_exp;
+reg  last_NRAMRen_exp;
+reg  last_NRAMWen_exp;
+reg  last_RAMRen_exp;
+reg  last_RAMWen_exp;
+reg  last_save_flagtest_exp;
+reg [2:0] last_statetest_exp;
+
+reg trigger;
+
+integer i;
+integer nummismatches;
+
+reg [1:8] on_first_change ;
+
+
+initial
+begin
+trigger = 0;
+i = 0;
+nummismatches = 0;
+on_first_change = 8'b1;
+end
+
+// update real /o prevs
+
+always @(trigger)
+begin
+	Displayen_prev = Displayen;
+	Flashen_prev = Flashen;
+	NRAMRen_prev = NRAMRen;
+	NRAMWen_prev = NRAMWen;
+	RAMRen_prev = RAMRen;
+	RAMWen_prev = RAMWen;
+	save_flagtest_prev = save_flagtest;
+	statetest_prev = statetest;
+end
+
+// update expected /o prevs
+
+always @(trigger)
+begin
+	Displayen_expected_prev = Displayen_expected;
+	Flashen_expected_prev = Flashen_expected;
+	NRAMRen_expected_prev = NRAMRen_expected;
+	NRAMWen_expected_prev = NRAMWen_expected;
+	RAMRen_expected_prev = RAMRen_expected;
+	RAMWen_expected_prev = RAMWen_expected;
+	save_flagtest_expected_prev = save_flagtest_expected;
+	statetest_expected_prev = statetest_expected;
+end
+
+
+
+// expected Displayen
+initial
+begin
+	Displayen_expected = 1'bX;
+end 
+
+// expected Flashen
+initial
+begin
+	Flashen_expected = 1'bX;
+end 
+
+// expected RAMRen
+initial
+begin
+	RAMRen_expected = 1'bX;
+end 
+
+// expected RAMWen
+initial
+begin
+	RAMWen_expected = 1'bX;
+end 
+
+// expected save_flagtest
+initial
+begin
+	save_flagtest_expected = 1'bX;
+end 
+// expected statetest[ 2 ]
+initial
+begin
+	statetest_expected[2] = 1'bX;
+end 
+// expected statetest[ 1 ]
+initial
+begin
+	statetest_expected[1] = 1'bX;
+end 
+// expected statetest[ 0 ]
+initial
+begin
+	statetest_expected[0] = 1'bX;
+end 
+
+// expected NRAMRen
+initial
+begin
+	NRAMRen_expected = 1'bX;
+end 
+
+// expected NRAMWen
+initial
+begin
+	NRAMWen_expected = 1'bX;
+end 
+// generate trigger
+always @(Displayen_expected or Displayen or Flashen_expected or Flashen or NRAMRen_expected or NRAMRen or NRAMWen_expected or NRAMWen or RAMRen_expected or RAMRen or RAMWen_expected or RAMWen or save_flagtest_expected or save_flagtest or statetest_expected or statetest)
+begin
+	trigger <= ~trigger;
+end
+
+always @(posedge sampler_rx or negedge sampler_rx)
+begin
+`ifdef debug_tbench
+	$display("Scanning pattern %d @time = %t",i,$realtime );
+	i = i + 1;
+	$display("| expected Displayen = %b | expected Flashen = %b | expected NRAMRen = %b | expected NRAMWen = %b | expected RAMRen = %b | expected RAMWen = %b | expected save_flagtest = %b | expected statetest = %b | ",Displayen_expected_prev,Flashen_expected_prev,NRAMRen_expected_prev,NRAMWen_expected_prev,RAMRen_expected_prev,RAMWen_expected_prev,save_flagtest_expected_prev,statetest_expected_prev);
+	$display("| real Displayen = %b | real Flashen = %b | real NRAMRen = %b | real NRAMWen = %b | real RAMRen = %b | real RAMWen = %b | real save_flagtest = %b | real statetest = %b | ",Displayen_prev,Flashen_prev,NRAMRen_prev,NRAMWen_prev,RAMRen_prev,RAMWen_prev,save_flagtest_prev,statetest_prev);
+`endif
+	if (
+		( Displayen_expected_prev !== 1'bx ) && ( Displayen_prev !== Displayen_expected_prev )
+		&& ((Displayen_expected_prev !== last_Displayen_exp) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port Displayen :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", Displayen_expected_prev);
+		$display ("     Real value = %b", Displayen_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_Displayen_exp = Displayen_expected_prev;
+	end
+	if (
+		( Flashen_expected_prev !== 1'bx ) && ( Flashen_prev !== Flashen_expected_prev )
+		&& ((Flashen_expected_prev !== last_Flashen_exp) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port Flashen :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", Flashen_expected_prev);
+		$display ("     Real value = %b", Flashen_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_Flashen_exp = Flashen_expected_prev;
+	end
+	if (
+		( NRAMRen_expected_prev !== 1'bx ) && ( NRAMRen_prev !== NRAMRen_expected_prev )
+		&& ((NRAMRen_expected_prev !== last_NRAMRen_exp) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port NRAMRen :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", NRAMRen_expected_prev);
+		$display ("     Real value = %b", NRAMRen_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_NRAMRen_exp = NRAMRen_expected_prev;
+	end
+	if (
+		( NRAMWen_expected_prev !== 1'bx ) && ( NRAMWen_prev !== NRAMWen_expected_prev )
+		&& ((NRAMWen_expected_prev !== last_NRAMWen_exp) ||
+			on_first_change[4])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port NRAMWen :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", NRAMWen_expected_prev);
+		$display ("     Real value = %b", NRAMWen_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[4] = 1'b0;
+		last_NRAMWen_exp = NRAMWen_expected_prev;
+	end
+	if (
+		( RAMRen_expected_prev !== 1'bx ) && ( RAMRen_prev !== RAMRen_expected_prev )
+		&& ((RAMRen_expected_prev !== last_RAMRen_exp) ||
+			on_first_change[5])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port RAMRen :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", RAMRen_expected_prev);
+		$display ("     Real value = %b", RAMRen_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[5] = 1'b0;
+		last_RAMRen_exp = RAMRen_expected_prev;
+	end
+	if (
+		( RAMWen_expected_prev !== 1'bx ) && ( RAMWen_prev !== RAMWen_expected_prev )
+		&& ((RAMWen_expected_prev !== last_RAMWen_exp) ||
+			on_first_change[6])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port RAMWen :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", RAMWen_expected_prev);
+		$display ("     Real value = %b", RAMWen_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[6] = 1'b0;
+		last_RAMWen_exp = RAMWen_expected_prev;
+	end
+	if (
+		( save_flagtest_expected_prev !== 1'bx ) && ( save_flagtest_prev !== save_flagtest_expected_prev )
+		&& ((save_flagtest_expected_prev !== last_save_flagtest_exp) ||
+			on_first_change[7])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port save_flagtest :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", save_flagtest_expected_prev);
+		$display ("     Real value = %b", save_flagtest_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[7] = 1'b0;
+		last_save_flagtest_exp = save_flagtest_expected_prev;
+	end
+	if (
+		( statetest_expected_prev[0] !== 1'bx ) && ( statetest_prev[0] !== statetest_expected_prev[0] )
+		&& ((statetest_expected_prev[0] !== last_statetest_exp[0]) ||
+			on_first_change[8])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port statetest[0] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", statetest_expected_prev);
+		$display ("     Real value = %b", statetest_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[8] = 1'b0;
+		last_statetest_exp[0] = statetest_expected_prev[0];
+	end
+	if (
+		( statetest_expected_prev[1] !== 1'bx ) && ( statetest_prev[1] !== statetest_expected_prev[1] )
+		&& ((statetest_expected_prev[1] !== last_statetest_exp[1]) ||
+			on_first_change[8])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port statetest[1] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", statetest_expected_prev);
+		$display ("     Real value = %b", statetest_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[8] = 1'b0;
+		last_statetest_exp[1] = statetest_expected_prev[1];
+	end
+	if (
+		( statetest_expected_prev[2] !== 1'bx ) && ( statetest_prev[2] !== statetest_expected_prev[2] )
+		&& ((statetest_expected_prev[2] !== last_statetest_exp[2]) ||
+			on_first_change[8])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port statetest[2] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", statetest_expected_prev);
+		$display ("     Real value = %b", statetest_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[8] = 1'b0;
+		last_statetest_exp[2] = statetest_expected_prev[2];
+	end
+
+	trigger <= ~trigger;
+end
+initial 
+
+begin 
+$timeformat(-12,3," ps",6);
+#5000000;
+if (nummismatches > 0)
+	$display ("%d mismatched vectors : Simulation failed !",nummismatches);
+else
+	$display ("Simulation passed !");
+$finish;
+end 
+endmodule
+
+module RAM_ctr_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg clk;
+reg RAMRCO;
+reg RAMWCO;
+reg reset;
+reg save;
+reg trigger_ready;
+// wires                                               
+wire Displayen;
+wire Flashen;
+wire NRAMRen;
+wire NRAMWen;
+wire RAMRen;
+wire RAMWen;
+wire save_flagtest;
+wire [2:0] statetest;
+
+wire sampler;                             
+
+// assign statements (if any)                          
+RAM_ctr i1 (
+// port map - connection between master ports and signals/registers   
+	.clk(clk),
+	.Displayen(Displayen),
+	.Flashen(Flashen),
+	.NRAMRen(NRAMRen),
+	.NRAMWen(NRAMWen),
+	.RAMRCO(RAMRCO),
+	.RAMRen(RAMRen),
+	.RAMWCO(RAMWCO),
+	.RAMWen(RAMWen),
+	.reset(reset),
+	.save(save),
+	.save_flagtest(save_flagtest),
+	.statetest(statetest),
+	.trigger_ready(trigger_ready)
+);
+
+// clk
+always
+begin
+	clk = 1'b0;
+	clk = #50000 1'b1;
+	#50000;
+end 
+
+// RAMRCO
+initial
+begin
+	RAMRCO = 1'b0;
+	RAMRCO = #600000 1'b1;
+	RAMRCO = #100000 1'b0;
+	RAMRCO = #420000 1'b1;
+	RAMRCO = #80000 1'b0;
+end 
+
+// RAMWCO
+initial
+begin
+	RAMWCO = 1'b0;
+	RAMWCO = #500000 1'b1;
+	RAMWCO = #100000 1'b0;
+end 
+
+// save
+initial
+begin
+	save = 1'b0;
+	save = #800000 1'b1;
+	save = #280000 1'b0;
+end 
+
+// trigger_ready
+initial
+begin
+	trigger_ready = 1'b1;
+	trigger_ready = #100000 1'b0;
+end 
+
+// reset
+initial
+begin
+	reset = 1'b0;
+end 
+
+RAM_ctr_vlg_sample_tst tb_sample (
+	.clk(clk),
+	.RAMRCO(RAMRCO),
+	.RAMWCO(RAMWCO),
+	.reset(reset),
+	.save(save),
+	.trigger_ready(trigger_ready),
+	.sampler_tx(sampler)
+);
+
+RAM_ctr_vlg_check_tst tb_out(
+	.Displayen(Displayen),
+	.Flashen(Flashen),
+	.NRAMRen(NRAMRen),
+	.NRAMWen(NRAMWen),
+	.RAMRen(RAMRen),
+	.RAMWen(RAMWen),
+	.save_flagtest(save_flagtest),
+	.statetest(statetest),
+	.sampler_rx(sampler)
+);
+endmodule
+

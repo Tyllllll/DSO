@@ -1,0 +1,69 @@
+# Reading D:/Program/altera/13.1/modelsim_ase/tcl/vsim/pref.tcl 
+# do DSO_run_msim_rtl_verilog.do 
+# if ![file isdirectory DSO_iputf_libs] {
+# 	file mkdir DSO_iputf_libs
+# }
+# 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying D:\Program\altera\13.1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied D:\Program\altera\13.1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+###### Libraries for IPUTF cores 
+###### End libraries for IPUTF cores 
+###### MIF file copy and HDL compilation commands for IPUTF cores 
+# 
+# 
+# vlog "E:/Quartus/VHDL/DSO/PLL_sim/PLL.vo"
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module PLL
+# 
+# Top level modules:
+# 	PLL
+# 
+# vlog -vlog01compat -work work +incdir+E:/Quartus/VHDL/DSO {E:/Quartus/VHDL/DSO/FIFO.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module FIFO
+# 
+# Top level modules:
+# 	FIFO
+# 
+# vlog -vlog01compat -work work +incdir+E:/Quartus/VHDL/DSO/simulation/modelsim {E:/Quartus/VHDL/DSO/simulation/modelsim/FIFO_sim.vwf.vt}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module FIFO_vlg_sample_tst
+# -- Compiling module FIFO_vlg_check_tst
+# -- Compiling module FIFO_vlg_vec_tst
+# 
+# Top level modules:
+# 	FIFO_vlg_vec_tst
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  FIFO_vlg_vec_tst
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps FIFO_vlg_vec_tst 
+# Loading work.FIFO_vlg_vec_tst
+# Loading work.FIFO
+# Loading altera_mf_ver.dcfifo
+# Loading altera_mf_ver.dcfifo_mixed_widths
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.dcfifo_low_latency
+# Loading altera_mf_ver.ALTERA_MF_HINT_EVALUATION
+# Loading altera_mf_ver.dcfifo_dffpipe
+# Loading work.FIFO_vlg_sample_tst
+# Loading work.FIFO_vlg_check_tst
+# Loading altera_mf_ver.dcfifo_async
+# Loading altera_mf_ver.dcfifo_fefifo
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Simulation passed !
+# Break in Module FIFO_vlg_check_tst at E:/Quartus/VHDL/DSO/simulation/modelsim/FIFO_sim.vwf.vt line 561
+# Simulation Breakpoint: Break in Module FIFO_vlg_check_tst at E:/Quartus/VHDL/DSO/simulation/modelsim/FIFO_sim.vwf.vt line 561
+# MACRO ./DSO_run_msim_rtl_verilog.do PAUSED at line 28

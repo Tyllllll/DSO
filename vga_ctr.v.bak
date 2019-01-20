@@ -1,0 +1,228 @@
+module vga_ctr
+(
+	input		vga_clk,//输入时钟50M
+	input		vga_rst_n,
+	
+	input		[9:0] i_data,
+	output	[8:0] o_address,
+	
+	output	reg[23:0] color_data,//颜色信号 红--绿--蓝
+	
+	output	 vga_hs,	//行同步信号输出
+	output	 vga_vs,	//场同步信号输出
+	
+	output	reg clk_25M,
+	output	blank_n,	//消隐
+	output	sync_n	//信号同步
+);
+
+//define colors RGB--8|8|8 
+`define RED     24'hFF0000 /*11111111,00000000,00000000   */ 
+`define GREEN   24'h00FF00 /*00000000,11111111,00000000   */ 
+`define BLUE    24'h0000FF /*00000000,00000000,11111111   */ 
+`define WHITE   24'hFFFFFF /*11111111,11111111,11111111   */ 
+`define BLACK   24'h000000 /*00000000,00000000,00000000   */ 
+`define YELLOW  24'hFFFF00 /*11111111,11111111,00000000   */ 
+`define CYAN    24'hFF00FF /*11111111,00000000,11111111   */ 
+`define ROYAL   24'h00FFFF /*00000000,11111111,11111111   */
+
+//  640 * 480 
+`define H_FRONT 11'd16 
+`define H_SYNC  11'd96 
+`define H_BACK  11'd48 
+`define H_DISP  11'd640 
+`define H_TOTAL 11'd800 
+`define V_FRONT 11'd10 
+`define V_SYNC  11'd2 
+`define V_BACK  11'd33 
+`define V_DISP  11'd480 
+`define V_TOTAL 11'd525
+
+reg [11:0] cnt_hs;  //行信号clk计数,
+reg [11:0] cnt_vs;	 //场信号clk计数
+wire lcd_request;
+wire [11:0] vga_x;	//VGA的x坐标
+wire [11:0] vga_y;	//VGA的y坐标
+wire [8:0] i_data_temp;//进行坐标变换
+wire [8:0] i_temp;
+
+wire area0;//网格线标志
+wire area1;//界面区域标志
+wire area2;//数据框标志
+wire area3;//
+
+//功能： 产生25MHz的像素时钟
+//////////////////////////////////////////////////////////////////
+always @(posedge vga_clk or negedge vga_rst_n)
+	begin
+		 if(!vga_rst_n)
+			  clk_25M   <=  1'b0        ;
+		 else
+			  clk_25M   <=  ~clk_25M  ;     
+	end
+
+//----------------------------------------------
+
+always @ (posedge clk_25M or negedge vga_rst_n)
+	 begin     
+		 if (!vga_rst_n)         
+			cnt_hs <= 11'd0;     
+		 else         
+			 begin         
+				 if(cnt_hs < `H_TOTAL - 1'b1)   //line over                     
+					cnt_hs <= cnt_hs + 1'b1;         
+				 else             
+					cnt_hs <= 11'd0;        
+			 end 
+	 end
+assign vga_hs = (cnt_hs <= `H_SYNC - 1'b1) ? 1'b0 : 1'b1; 
+ //VGA行同步信号
+
+always@(posedge clk_25M or negedge vga_rst_n) 
+	begin 
+		if (!vga_rst_n) 
+			cnt_vs <= 11'b0; 
+		else if(cnt_hs == `H_TOTAL - 1'b1) //line over 
+			begin 
+				if(cnt_vs < `V_TOTAL - 1'b1) //frame over 
+					cnt_vs <= cnt_vs + 1'b1; 
+				else cnt_vs <= 11'd0; 
+			end 
+	end 
+assign vga_vs = (cnt_vs <= `V_SYNC - 1'b1) ? 1'b0 : 1'b1; 
+//VGA场同步信号
+
+assign  blank_n = lcd_request;//vga_hs & vga_vs;
+assign	sync_n=1'b0;
+
+assign	o_address = vga_x[8:0];
+
+ //ahead x clock 
+localparam H_AHEAD =   12'd1;
+assign  lcd_request = ((cnt_hs >= `H_SYNC + `H_BACK - H_AHEAD )&& (cnt_hs < `H_SYNC + `H_BACK + `H_DISP - H_AHEAD) &&
+                        (cnt_vs >= `V_SYNC + `V_BACK )&& (cnt_vs < `V_SYNC + `V_BACK + `V_DISP) )
+                        ? 1'b1 : 1'b0; 
+ //lcd vgax & vgay
+assign  	vga_x = lcd_request ? (cnt_hs - (`H_SYNC + `H_BACK - H_AHEAD)) : 11'd0; 
+assign 	vga_y = lcd_request ? (cnt_vs - (`V_SYNC + `V_BACK)) : 11'd0;
+
+//-----------------------
+assign i_data_temp = i_data[9:1];
+assign i_temp = (240-i_data_temp/2)+120;
+
+// 示波器界面
+assign area0 = (	vga_x == 10 || 	vga_x==60 ||	
+						vga_x==110  || vga_x==160 || 
+						vga_x==210 || vga_x==260 || 
+						vga_x==310 || vga_x==360  || 
+						vga_x==410 || vga_x==460  || 
+						vga_x==510 
+						|| vga_y == 20 || vga_y == 75 
+						|| vga_y == 130  || vga_y == 185 
+						|| vga_y == 240 || vga_y == 295 
+						|| vga_y == 350 || vga_y == 405 
+						|| vga_y == 460 )
+						?1'b1 : 1'b0;
+						
+assign area1 = (vga_x >= 10 && vga_x <= 510 && vga_y >= 20 && vga_y <= 460) ?1'b1 : 1'b0;
+//--------------------
+//示波器数据显示界面
+assign area2 = (vga_x >= 520 && vga_x <= 620 && vga_y >= 80 && vga_y <= 400) ?1'b1 : 1'b0;
+
+//显示数字
+//8
+assign area3 = ( 	vga_x >= 1 && vga_x <=  6 && ( vga_y == 1 || vga_y == 6 || vga_y == 11 ) || 
+						vga_y >= 1 && vga_y <= 11 && ( vga_x == 1 || vga_x == 6  )
+						//vga_x >= 1 && vga_x <= 4 && ( vga_y == 1 || vga_y == 4 || vga_y == 7 )
+						//vga_x >= 1 && vga_x <= 4 && ( vga_y == 1 || vga_y == 4 || vga_y == 7 )
+					) ?1'b1 : 1'b0;
+
+
+
+//显示
+always@(posedge clk_25M or negedge vga_rst_n) 
+begin 
+	
+		if(!vga_rst_n) 
+			color_data <= 24'H0; 
+		else if(area1)
+			if(vga_y == (i_temp[8:0]))
+				color_data <= `RED;
+			else if(area0)
+				color_data<= `BLACK; //24'H77909E;//格线
+			else
+					color_data <= 24'H606060;//内背景
+		else if(area2)
+			color_data <= `WHITE;//
+		else if(area3)
+			color_data <= `BLACK;//
+		else
+			color_data <= 24'H808080;//外背景
+			
+end 
+endmodule
+
+ /*if(!vga_rst_n) 
+		color_data <= 24'h0; 
+	else 
+		begin 
+		if ((vga_x >= 0) &&( vga_x < (`H_DISP/8)*1) )
+			color_data <= `RED;
+		else if(vga_x >= (`H_DISP/8)*1 && vga_x < (`H_DISP/8)*2)
+			color_data <= `BLUE;
+		else if(vga_x >= (`H_DISP/8)*2 && vga_x < (`H_DISP/8)*3)
+			color_data <= `GREEN;
+		else if(vga_x >= (`H_DISP/8)*3 && vga_x < (`H_DISP/8)*4)
+			color_data <= `CYAN;
+		else if(vga_x >= (`H_DISP/8)*4 && vga_x < (`H_DISP/8)*5)
+			color_data <= `BLACK;
+		else if(vga_x >= (`H_DISP/8)*5 && vga_x < (`H_DISP/8)*6)
+			color_data <= `WHITE;
+		else if(vga_x >= (`H_DISP/8)*6 && vga_x < (`H_DISP/8)*7)
+			color_data <= `ROYAL;
+		else if(vga_x >= (`H_DISP/8)*7 && vga_x < (`H_DISP/8)*8)
+			color_data <= `YELLOW;
+		end */
+		
+	/*if(!vga_rst_n) 
+		color_data <= 24'h0; 
+	else 
+		begin 
+		if ((vga_y >= 0) &&( vga_y < (`V_DISP/4)*1) )
+			color_data <= `RED;
+		else if(vga_y >= (`V_DISP/4)*1 && vga_y < (`V_DISP/4)*2)
+			color_data <= `BLUE;
+		else if(vga_y >= (`V_DISP/4)*2 && vga_y < (`V_DISP/4)*3)
+			color_data <= `GREEN;
+		else if(vga_y >= (`V_DISP/4)*3 && vga_y < (`V_DISP/4)*4)
+			color_data <= `YELLOW;
+		end */
+		/*
+		if(!vga_rst_n) 
+		color_data <= 24'h0; 
+	else 
+		begin 
+		if ((vga_y >= 10) &&( vga_y < (`V_DISP/4)*1+10) )
+			color_data <= `RED;
+		else if(vga_y >= ((`V_DISP/4)*1+10) && vga_y < (`V_DISP/4)*4)
+			begin
+				if ((vga_x >= 0) &&( vga_x < (`H_DISP/8)*1) )
+					color_data <= `WHITE;
+				else if(vga_x >= (`H_DISP/8)*1 && vga_x < (`H_DISP/8)*2)
+					color_data <= `BLUE;
+				else if(vga_x >= (`H_DISP/8)*2 && vga_x < (`H_DISP/8)*3)
+					color_data <= `GREEN;
+				else if(vga_x >= (`H_DISP/8)*3 && vga_x < (`H_DISP/8)*4)
+					color_data <= `CYAN;
+				else if(vga_x >= (`H_DISP/8)*4 && vga_x < (`H_DISP/8)*5)
+					color_data <= `BLACK;
+				else if(vga_x >= (`H_DISP/8)*5 && vga_x < (`H_DISP/8)*6)
+					color_data <= `WHITE;
+				else if(vga_x >= (`H_DISP/8)*6 && vga_x < (`H_DISP/8)*7)
+					color_data <= `ROYAL;
+				else if(vga_x >= (`H_DISP/8)*7 && vga_x < (`H_DISP/8)*8)
+					color_data <= `YELLOW;
+				end
+		end */
+ 
+ 

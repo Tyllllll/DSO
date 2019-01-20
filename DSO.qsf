@@ -1,0 +1,151 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2013 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 64-Bit
+# Version 13.1.0 Build 162 10/23/2013 SJ Full Version
+# Date created = 23:59:04  January 07, 2019
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		DSO_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone V"
+set_global_assignment -name DEVICE 5CSEMA5F31C6
+set_global_assignment -name TOP_LEVEL_ENTITY DSO
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.1
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "23:59:04  JANUARY 07, 2019"
+set_global_assignment -name LAST_QUARTUS_VERSION 13.1
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name EDA_NETLIST_WRITER_OUTPUT_DIR "E:/Quartus/VHDL/DSO/simulation/qsim/" -section_id eda_simulation
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST ON -section_id eda_simulation
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH FIFO_vlg_vec_tst -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_NAME FIFO_vlg_vec_tst -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id FIFO_vlg_vec_tst
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME FIFO_vlg_vec_tst -section_id FIFO_vlg_vec_tst
+set_global_assignment -name EDA_TEST_BENCH_NAME RAM_vlg_vec_tst -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id RAM_vlg_vec_tst
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME RAM_vlg_vec_tst -section_id RAM_vlg_vec_tst
+set_global_assignment -name EDA_TEST_BENCH_NAME PLL_vlg_vec_tst -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id PLL_vlg_vec_tst
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME PLL_vlg_vec_tst -section_id PLL_vlg_vec_tst
+set_location_assignment PIN_AJ4 -to ADC_CONVS
+set_location_assignment PIN_AK4 -to ADC_DIN
+set_location_assignment PIN_AK3 -to ADC_DOUT
+set_location_assignment PIN_AK2 -to ADC_SCLK
+set_global_assignment -name ENABLE_SIGNALTAP OFF
+set_global_assignment -name USE_SIGNALTAP_FILE DSO.stp
+set_global_assignment -name EDA_TEST_BENCH_NAME FIFOtest_vlg_vec_tst -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id FIFOtest_vlg_vec_tst
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME FIFOtest_vlg_vec_tst -section_id FIFOtest_vlg_vec_tst
+set_location_assignment PIN_AF14 -to 50Mclk
+set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/FIFO_sim.vwf.vt -section_id FIFO_vlg_vec_tst
+set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/RAM_sim.vwf.vt -section_id RAM_vlg_vec_tst
+set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/PLL_sim.vwf.vt -section_id PLL_vlg_vec_tst
+set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/FIFOtest_sim.vwf.vt -section_id FIFOtest_vlg_vec_tst
+set_location_assignment PIN_F13 -to color_data[23]
+set_location_assignment PIN_E12 -to color_data[22]
+set_location_assignment PIN_D12 -to color_data[21]
+set_location_assignment PIN_C12 -to color_data[20]
+set_location_assignment PIN_B12 -to color_data[19]
+set_location_assignment PIN_E13 -to color_data[18]
+set_location_assignment PIN_C13 -to color_data[17]
+set_location_assignment PIN_A13 -to color_data[16]
+set_location_assignment PIN_E11 -to color_data[15]
+set_location_assignment PIN_F11 -to color_data[14]
+set_location_assignment PIN_G12 -to color_data[13]
+set_location_assignment PIN_G11 -to color_data[12]
+set_location_assignment PIN_G10 -to color_data[11]
+set_location_assignment PIN_H12 -to color_data[10]
+set_location_assignment PIN_J10 -to color_data[9]
+set_location_assignment PIN_J9 -to color_data[8]
+set_location_assignment PIN_J14 -to color_data[7]
+set_location_assignment PIN_G15 -to color_data[6]
+set_location_assignment PIN_F15 -to color_data[5]
+set_location_assignment PIN_H14 -to color_data[4]
+set_location_assignment PIN_F14 -to color_data[3]
+set_location_assignment PIN_H13 -to color_data[2]
+set_location_assignment PIN_G13 -to color_data[1]
+set_location_assignment PIN_B13 -to color_data[0]
+set_location_assignment PIN_F10 -to vga_blank_n
+set_location_assignment PIN_B11 -to vga_hs
+set_location_assignment PIN_C10 -to vga_sync
+set_location_assignment PIN_D11 -to vga_vs
+set_location_assignment PIN_AA14 -to rst
+set_location_assignment PIN_AB12 -to hscan_switch
+set_location_assignment PIN_AF9 -to trigvol_switch
+set_location_assignment PIN_Y16 -to vga_left
+set_location_assignment PIN_W15 -to vga_right
+set_location_assignment PIN_AC12 -to vga_vol_switch
+set_location_assignment PIN_A11 -to 25Mclk_vga
+set_location_assignment PIN_AD10 -to model_sel
+set_location_assignment PIN_AE12 -to save
+set_global_assignment -name VHDL_FILE AD_ctr.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE AD_ctr.vwf
+set_global_assignment -name VHDL_FILE addr_counter.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE addr_counter_sim.vwf
+set_global_assignment -name VHDL_FILE biplexers.vhd
+set_global_assignment -name BDF_FILE DSO.bdf
+set_global_assignment -name SIGNALTAP_FILE DSO.stp
+set_global_assignment -name QIP_FILE FIFO.qip
+set_global_assignment -name VECTOR_WAVEFORM_FILE FIFO_sim.vwf
+set_global_assignment -name VHDL_FILE FIFO_ctr.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE FIFO_ctr_sim.vwf
+set_global_assignment -name VERILOG_FILE measuring.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE measuring_sim.vwf
+set_global_assignment -name TEXT_FILE PinPlanner.txt
+set_global_assignment -name TEXT_FILE PLLfreq.txt
+set_global_assignment -name QIP_FILE PLL.qip
+set_global_assignment -name SIP_FILE PLL.sip
+set_global_assignment -name VECTOR_WAVEFORM_FILE PLL_sim.vwf
+set_global_assignment -name QIP_FILE RAM.qip
+set_global_assignment -name VECTOR_WAVEFORM_FILE RAM_sim.vwf
+set_global_assignment -name VHDL_FILE RAM_ctr.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE RAM_ctr_sim.vwf
+set_global_assignment -name QIP_FILE RAM_save.qip
+set_global_assignment -name VHDL_FILE trigger_sec.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE trigger_sec_sim.vwf
+set_global_assignment -name VERILOG_FILE vga_ctr.v
+set_global_assignment -name BDF_FILE ADtest.bdf
+set_global_assignment -name SIGNALTAP_FILE ADtest.stp
+set_location_assignment PIN_AC9 -to pause
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

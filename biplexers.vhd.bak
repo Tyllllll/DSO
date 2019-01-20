@@ -1,0 +1,22 @@
+------------------------------------------------------------------------
+--
+--        Copyright (C) 2018
+--        All rights reserved
+--
+--        filename: biplexers
+--
+--        created by Tyl at 2019-01-06 08:57:33
+--        modified by Tyl at 2019-01-12 11:40:17
+--
+------------------------------------------------------------------------
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity biplexers is
+	port(
+		addr: in std_logic;
+		q: out std_logic_vector(9 downto 0);
+		vol: out std_logic_vector(11 downto 0);
+		freq: out std_logic_vector(23 downto 0)
+	);
+entity biplexers;

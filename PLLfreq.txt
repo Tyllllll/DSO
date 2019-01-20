@@ -1,0 +1,4 @@
+refclk	50MHz
+outclk0	40MHz
+outclk1	25MHz
+outclk2  0.8Mhz

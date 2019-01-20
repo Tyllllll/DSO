@@ -1,0 +1,417 @@
+m255
+K3
+13
+cModel Technology
+Z0 dE:\Quartus\VHDL\DSO\simulation\qsim
+vAD_ctr
+IZ83D9nLWhb:G=WXzH3_PM2
+VL:5jE[_16=5Egm7UEknKH0
+Z1 dE:\Quartus\VHDL\DSO\simulation\qsim
+w1547123897
+Z2 8DSO.vo
+Z3 FDSO.vo
+L0 31
+Z4 OV;L;10.1d;51
+r1
+31
+Z5 !s90 -work|work|DSO.vo|
+Z6 o-work work -O0
+Z7 n@a@d_ctr
+Z8 !s107 DSO.vo|
+!i10b 1
+!s100 Yo_nbR6Eb4No^koN_`Y3R0
+!s85 0
+!s108 1547123898.380000
+!s101 -O0
+vAD_ctr_vlg_check_tst
+II70I?36DKRiR11bQg`9@F1
+V^f0`BCOeP`dGi2U@28Cm73
+R1
+Z9 w1547123895
+Z10 8AD_ctr.vwf.vt
+Z11 FAD_ctr.vwf.vt
+L0 61
+R4
+r1
+31
+Z12 !s108 1547123898.548000
+Z13 !s107 AD_ctr.vwf.vt|
+Z14 !s90 -work|work|AD_ctr.vwf.vt|
+R6
+Z15 n@a@d_ctr_vlg_check_tst
+!i10b 1
+!s100 FUGHRGX:z]n8G3U[ZFB2Y2
+!s85 0
+!s101 -O0
+vAD_ctr_vlg_sample_tst
+Z16 !s100 gO@l^_6MKi2E[QK15IDZP3
+Z17 I2zER:S3?BPdE<lJ]2kA>:2
+Z18 VC_RWknZRL:A]N:NQo6U3P3
+R1
+R9
+R10
+R11
+L0 29
+R4
+r1
+31
+R12
+R13
+R14
+R6
+Z19 n@a@d_ctr_vlg_sample_tst
+!i10b 1
+!s85 0
+!s101 -O0
+vAD_ctr_vlg_vec_tst
+Im0=3OZ`ebZgNH23eSQUPA3
+Z20 V>hZ72@M3`EiaB4[3QL];82
+R1
+R9
+R10
+R11
+L0 425
+R4
+r1
+31
+R12
+R13
+R14
+R6
+Z21 n@a@d_ctr_vlg_vec_tst
+!i10b 1
+!s100 TICjRf;J4dfUR_Fiee:WW3
+!s85 0
+!s101 -O0
+vclk_generate
+Il^i[6P3WMd_XUY>fP@Bj[3
+VJ5c_3@OzbPDmYPc8CE7OE3
+R1
+w1547040308
+R2
+R3
+L0 31
+R4
+r1
+31
+R5
+R6
+R8
+!i10b 1
+!s100 L;[[IQN=UfPWXcZhG0CZ10
+!s85 0
+!s108 1547040309.105000
+!s101 -O0
+vclk_generate_vlg_check_tst
+IY?eSSS@cR`>NA`fllGZo:3
+V_SNzn7X2XWd1f=bnYQS@33
+R1
+Z22 w1547040306
+Z23 8clk_generate.vwf.vt
+Z24 Fclk_generate.vwf.vt
+L0 59
+R4
+r1
+31
+Z25 !s108 1547040309.370000
+Z26 !s107 clk_generate.vwf.vt|
+Z27 !s90 -work|work|clk_generate.vwf.vt|
+R6
+!i10b 1
+!s100 _`aVUi1jbR[o;:;f9oYWc0
+!s85 0
+!s101 -O0
+vclk_generate_vlg_sample_tst
+I9l7cL@SPSfCbL5mY?O9PJ2
+VL96bTn=RHHolH6V;W=o`[1
+R1
+R22
+R23
+R24
+L0 29
+R4
+r1
+31
+R25
+R26
+R27
+R6
+!i10b 1
+!s100 HE1>6`5V0mk:E2n?I1hiZ1
+!s85 0
+!s101 -O0
+vclk_generate_vlg_vec_tst
+I<noMW8XcmH`3ZR[BO><Cn2
+V<5gZD81YFYf1WX`DXOdZ@2
+R1
+R22
+R23
+R24
+L0 181
+R4
+r1
+31
+R25
+R26
+R27
+R6
+!i10b 1
+!s100 dmQU7JTLQ;?[lS6i9M2^@2
+!s85 0
+!s101 -O0
+vFIFO
+I6H8hH6goNili^6L:oh00c3
+VGZZ92Ch^=zfDOhMWB<k543
+R1
+w1546949494
+8E:/Quartus/VHDL/DSO/FIFO.v
+FE:/Quartus/VHDL/DSO/FIFO.v
+L0 39
+R4
+r1
+31
+Z28 o-vlog01compat -work work -O0
+Z29 n@f@i@f@o
+!i10b 1
+!s100 Rln>fDbA=I^aFGbbie7g=2
+!s85 0
+!s108 1547027707.583000
+!s107 E:/Quartus/VHDL/DSO/FIFO.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Quartus/VHDL/DSO|E:/Quartus/VHDL/DSO/FIFO.v|
+!s101 -O0
+!s92 -vlog01compat -work work +incdir+E:/Quartus/VHDL/DSO -O0
+vFIFO_vlg_check_tst
+IgAl92<>j7b[6Fd=7SQV7Y1
+VhaTH_CV9f@CQZa2VBQ;>50
+R1
+Z30 w1547027670
+Z31 8E:/Quartus/VHDL/DSO/simulation/modelsim/FIFO_sim.vwf.vt
+Z32 FE:/Quartus/VHDL/DSO/simulation/modelsim/FIFO_sim.vwf.vt
+L0 67
+R4
+r1
+31
+Z33 !s108 1547027707.753000
+Z34 !s107 E:/Quartus/VHDL/DSO/simulation/modelsim/FIFO_sim.vwf.vt|
+Z35 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Quartus/VHDL/DSO/simulation/modelsim|E:/Quartus/VHDL/DSO/simulation/modelsim/FIFO_sim.vwf.vt|
+R28
+Z36 !s92 -vlog01compat -work work +incdir+E:/Quartus/VHDL/DSO/simulation/modelsim -O0
+Z37 n@f@i@f@o_vlg_check_tst
+!i10b 1
+!s100 bmkaPO9D7NFMSaIYE96@a1
+!s85 0
+!s101 -O0
+vFIFO_vlg_sample_tst
+IAgVGQRfMbzohG9kFY<:Lz1
+V2BS1MSVPV7@FCA@HKda<W3
+R1
+R30
+R31
+R32
+L0 29
+R4
+r1
+31
+R33
+R34
+R35
+R28
+R36
+Z38 n@f@i@f@o_vlg_sample_tst
+!i10b 1
+!s100 KKNCJ0RmibJ=KG>bMSR:R2
+!s85 0
+!s101 -O0
+vFIFO_vlg_vec_tst
+ITo:h`EQMlPKj<H0ioRmBA1
+Z39 Vi=HO476]0^iTk[;dkOAgL1
+R1
+R30
+R31
+R32
+L0 565
+R4
+r1
+31
+R33
+R34
+R35
+R28
+R36
+Z40 n@f@i@f@o_vlg_vec_tst
+!i10b 1
+!s100 N7NKmf551ejFU<YS`N`c80
+!s85 0
+!s101 -O0
+vmeasuring
+I0_0F99O44azFlWV0J3GJK1
+V<786>d>kT?Nel778l6a<E2
+R1
+w1547300766
+R2
+R3
+L0 31
+R4
+r1
+31
+R5
+R6
+!i10b 1
+!s100 VIm<;d4CIh3]chMJKYI012
+!s85 0
+!s108 1547300767.770000
+R8
+!s101 -O0
+vmeasuring_vlg_check_tst
+!i10b 1
+!s100 F=[3G3^U9nMRjDI5YjcL;0
+IMg]Lg2^Nm[>Ac<CkkClDA0
+VZ1l<zjnAiJQ9[3<1S`8883
+R1
+Z41 w1547300763
+Z42 8measuring_sim.vwf.vt
+Z43 Fmeasuring_sim.vwf.vt
+L0 63
+R4
+r1
+!s85 0
+31
+Z44 !s108 1547300769.054000
+Z45 !s107 measuring_sim.vwf.vt|
+Z46 !s90 -work|work|measuring_sim.vwf.vt|
+!s101 -O0
+R6
+vmeasuring_vlg_sample_tst
+!i10b 1
+!s100 LYzeMeZ0nlG?HUC_=>_b`1
+IHzTLdKX2iIKXSFi_YXa4b0
+VoOah=SHQcU]gd4T:86OzR2
+R1
+R41
+R42
+R43
+L0 29
+R4
+r1
+!s85 0
+31
+R44
+R45
+R46
+!s101 -O0
+R6
+vmeasuring_vlg_vec_tst
+!i10b 1
+!s100 KlHdS]VdWT>DP2TBRJD[f2
+I1WL<f02]nVWFREUg=>H0X1
+VZ1NIceCSF2Xm>cP:<ekcL2
+R1
+R41
+R42
+R43
+L0 795
+R4
+r1
+!s85 0
+31
+R44
+R45
+R46
+!s101 -O0
+R6
+vPLL
+IQ?nY;76AL7zQ_NoATL5Dz0
+VE>D4g3LGbKG2gaNdkb0iF0
+R1
+w1547003989
+8E:/Quartus/VHDL/DSO/PLL_sim/PLL.vo
+FE:/Quartus/VHDL/DSO/PLL_sim/PLL.vo
+L0 31
+R4
+r1
+31
+o-O0
+n@p@l@l
+!i10b 1
+!s100 UDNR;>ZKFO[ND^E7WjkWf2
+!s85 0
+!s108 1547027707.405000
+!s107 E:/Quartus/VHDL/DSO/PLL_sim/PLL.vo|
+!s90 -reportprogress|300|E:/Quartus/VHDL/DSO/PLL_sim/PLL.vo|
+!s101 -O0
+vtrigger_sec
+IIDYHd;QIMn6:^7IlV?[AH0
+VY4E_<YnVS;aA3LJ>aXXFH3
+R1
+w1547044248
+R2
+R3
+L0 31
+R4
+r1
+31
+R5
+R6
+R8
+!i10b 1
+!s100 Bh>oc5]TImNW0g]g=o7YU3
+!s85 0
+!s108 1547044249.963000
+!s101 -O0
+vtrigger_sec_vlg_check_tst
+IPTD:Ak7`z4QZBccehbeXj2
+V^W2i3z6bKId@79IPDdI5B2
+R1
+Z47 w1547044247
+Z48 8trigger_sec_sim.vwf.vt
+Z49 Ftrigger_sec_sim.vwf.vt
+L0 65
+R4
+r1
+31
+Z50 !s108 1547044250.308000
+Z51 !s107 trigger_sec_sim.vwf.vt|
+Z52 !s90 -work|work|trigger_sec_sim.vwf.vt|
+R6
+!i10b 1
+!s100 [i5]mX]8JPHRLahMcF_Cd0
+!s85 0
+!s101 -O0
+vtrigger_sec_vlg_sample_tst
+Ikf=[_NU5n5nRJBQej?h3g3
+V]]Th9cbh[Pd1ecGA]jZVX0
+R1
+R47
+R48
+R49
+L0 29
+R4
+r1
+31
+R50
+R51
+R52
+R6
+!i10b 1
+!s100 ?mSdYZd17OK8[iLO<Bk=;0
+!s85 0
+!s101 -O0
+vtrigger_sec_vlg_vec_tst
+Iob63dPCm<_QNcP=GngjPg3
+VV@:JF6:mbk=lO5LYLF`De0
+R1
+R47
+R48
+R49
+L0 1027
+R4
+r1
+31
+R50
+R51
+R52
+R6
+!i10b 1
+!s100 WDNUYnB?PC?e62_Y`Lkn<2
+!s85 0
+!s101 -O0

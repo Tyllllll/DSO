@@ -1,0 +1,25 @@
+------------------------------------------------------------------------
+--
+--        Copyright (C) 2018
+--        All rights reserved
+--
+--        filename: addr_counter
+--
+--        created by Tyl at 2019-01-06 09:36:22
+--        modified by Tyl at 
+--
+------------------------------------------------------------------------
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity addr_counter is
+	port(
+		clk, rst: in std_logic;
+		RAMWCten: in std_logic;
+		RAMRCten: in std_logic;
+		RAMWadr: out std_logic_vector(8 downto 0);
+		RAMWCO: out std_logic;
+		RAMRCO: out std_logic;
+		RAMRadr: out std_logic_vector(8 downto 0)
+	);
+end addr_counter;

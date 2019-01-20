@@ -1,0 +1,26 @@
+m255
+K3
+13
+cModel Technology
+Z0 dE:\Quartus\VHDL\DSO\simulation\qsim
+vPLL_0002
+!i10b 1
+Z1 !s100 z]XD^Gi8F;mX_djJRfBUn0
+Z2 I_2:R70KLPocoYe6_ibY5W2
+Z3 VFoBNWNl1dZ]PVQ8Z555RO3
+Z4 dE:\Quartus\VHDL\DSO\simulation\qsim
+Z5 w1546877454
+Z6 8E:/Quartus/VHDL/DSO/PLL/PLL_0002.v
+Z7 FE:/Quartus/VHDL/DSO/PLL/PLL_0002.v
+L0 2
+Z8 OV;L;10.1d;51
+r1
+!s85 0
+31
+!s108 1546880349.972000
+!s107 E:/Quartus/VHDL/DSO/PLL/PLL_0002.v|
+Z9 !s90 -reportprogress|300|-vlog01compat|-work|PLL|+incdir+E:/Quartus/VHDL/DSO/PLL|E:/Quartus/VHDL/DSO/PLL/PLL_0002.v|
+!s101 -O0
+Z10 o-vlog01compat -work PLL -O0
+Z11 !s92 -vlog01compat -work PLL +incdir+E:/Quartus/VHDL/DSO/PLL -O0
+Z12 n@p@l@l_0002
